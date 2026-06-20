@@ -1,0 +1,2048 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFMIND DRAUGHTS PLAYER REGISTRATION FORM</title>
+    <style>
+        /* ===== CSS zote zilizotolewa awali ===== */
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            vertical-align: baseline;
+        }
+        body {
+            background-attachment: fixed;
+            color: #444444;
+            font: 75%/1.3 Arial, Helvetica, sans-serif;
+            margin: 0 auto;
+        }
+        input, input[type="text"], input[type="search"], isindex, textarea, button {
+            outline: none;
+            margin: 0 auto;
+            padding: 5px 10px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        img, a {
+            border: 0px;
+            outline: none;
+            color: #3a6cae;
+            text-decoration: none;
+        }
+        img, a:hover {
+            text-decoration: underline;
+        }
+        .zf-flLeft { float: left; }
+        .zf-flRight { float: right; }
+        .zf-clearBoth, .zf-eclearBoth { clear: both; }
+        ol, ul { list-style: none outside none; }
+        .zf-normalText { font-size: 13px; line-height: 1.5; }
+        .zf-smallText { font-size: 0.9em; font-weight: normal; }
+        .zf-smallHeading { font-size: 18px; }
+        .zf-heading { font-size: 2em; }
+        .zf-subHeading { font-size: 1.5em; }
+        .zf-boldText, .zf-boldText a { font-weight: bold; text-decoration: none; }
+        .zf-italicText { font-style: italic; }
+        .zf-heading a { text-decoration: underline; }
+        .zf-heading a:hover { text-decoration: none; }
+        .zf-blodText { font-weight: bold; }
+        .zf-overAuto { overflow: auto; }
+        .zf-split { color: #8B9193; padding: 0 3px; }
+        .zf-backgroundBg { background: rgba(237, 239, 244, 1); }
+        .zf-templateWidth {
+            margin: 0 auto;
+            padding: 30px 20px;
+            max-width: 800px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .zf-templateWrapper {
+            background: #fff;
+            -webkit-box-shadow: 0px 0px 22px 0px #d8dfed;
+            -moz-box-shadow: 0px 0px 22px 0px #d8dfed;
+            box-shadow: 0px 0px 22px 0px #d8dfed;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 10px;
+        }
+        .zf-tempContDiv input[type="text"], .zf-tempContDiv textarea, .zf-tempContDiv .zf-pdfTextArea {
+            background: #fff;
+            border: 1px solid rgba(184, 187, 211, 1);
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 4px;
+            padding: 5px;
+            font-size: 15px;
+            color: rgb(37, 44, 62);
+            padding: 11px 10px 10px 10px;
+            height: 40px;
+            transition: 0.3s;
+        }
+        .zf-tempContDiv input[type="text"]::placeholder, .zf-tempContDiv textarea::placeholder, .zf-tempContDiv .zf-pdfTextArea::placeholder {
+            color: rgb(37, 44, 62);
+            opacity: 0.5;
+        }
+        .zf-tempContDiv input[type="text"]:hover, .zf-tempContDiv textarea:hover {
+            border: 1px solid rgba(184, 187, 211, 1);
+        }
+        .zf-tempContDiv input[type="text"]:focus, .zf-tempContDiv textarea:focus {
+            border: 1px solid #2eb79f;
+            box-shadow: 0px 0px 2px 0px #2eb79f;
+        }
+        .zf-tempContDiv textarea {
+            min-height: 100px;
+            height: 100px;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 10px;
+        }
+        .zf-errorMessage {
+            font: 15px Arial, Helvetica, sans-serif;
+            color: #f41033;
+            padding-top: 10px;
+        }
+        .zf-important {
+            color: #ff0000 !important;
+            padding: 0;
+            font-size: 17px !important;
+            margin-left: 2px;
+            font-weight: bold;
+        }
+        .zf-instruction {
+            color: #465475;
+            font-style: normal;
+            font-size: 13px;
+            overflow: visible !important;
+            word-break: break-all;
+            padding: 8px 0px 0px 0px;
+            font-weight: 500;
+            clear: both;
+        }
+        .zf-symbols { padding: 0 5px; }
+        .zf-overflow { overflow: hidden; }
+        .zf-tempHeadBdr { margin: 0; padding: 0; overflow: hidden; }
+        .zf-tempHeadContBdr {
+            background: #ffffff;
+            border-bottom: 1px solid #ced3e0;
+            margin: 0;
+            padding: 28px 40px;
+            -webkit-border-radius: 2px 2px 0 0;
+            -moz-border-radius: 2px 2px 0 0;
+            border-radius: 10px 10px 0 0;
+        }
+        .zf-tempHeadContBdr .zf-frmTitle {
+            color: #252c3e;
+            margin: 0;
+            padding: 0;
+            font-size: 33px;
+            font-weight: 500;
+            text-align: center;
+        }
+        .zf-tempHeadContBdr .zf-frmDesc {
+            color: #667291;
+            font-size: 18px;
+            font-weight: 400;
+            margin: 0;
+            padding-top: 8px;
+            text-align: center;
+        }
+        .zf-subContWrap { padding: 16px 0 16px 0; }
+        .zf-tempFrmWrapper {
+            padding: 16px 40px 16px 40px;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .zf-tempFrmWrapper .zf-tempContDiv { margin: 0; padding: 0; }
+        .zf-tempFrmWrapper .zf-labelName {
+            font-weight: 500;
+            font-size: 16px;
+            color: #252c3e;
+        }
+        .zf-form-sBox {
+            padding: 9px 10px 10px 5px;
+            background: #fff;
+            border: 1px solid rgba(184, 187, 211, 1);
+            border-radius: 4px;
+            font-size: 16px;
+            height: 40px;
+            transition: 0.3s;
+            vertical-align: middle;
+            position: relative;
+            color: rgba(37, 44, 62, 1);
+        }
+        .zf-form-sBox:focus, .zf-form-sBox:focus:hover {
+            border: 1px solid #2eb79f;
+            box-shadow: 0px 0px 2px 0px #2eb79f;
+            outline: none;
+        }
+        .zf-form-sBox::after { content: " "; position: absolute; }
+        .zf-name .zf-tempContDiv span, .zf-phone .zf-tempContDiv span, .zf-time .zf-tempContDiv span {
+            float: left;
+            display: block;
+        }
+        .zf-name .zf-tempContDiv span { margin-left: 4%; }
+        .zf-name .zf-tempContDiv span.last { margin-right: 0; }
+        .zf-name .zf-tempContDiv span label { display: block; padding-top: 3px; }
+        .zf-name .zf-tempContDiv input[type="text"] { width: 100%; }
+        .zf-phone .zf-tempContDiv span label, .zf-date .zf-tempContDiv span label, .zf-time .zf-tempContDiv span label, .zf-address .zf-tempContDiv span label, .zf-geolocation .zf-tempContDiv span label, .zf-name .zf-tempContDiv span label {
+            font-style: normal;
+            font-size: 13px;
+            overflow: visible !important;
+            word-break: break-all;
+            padding: 8px 0px 0px 0px;
+            font-weight: 500;
+        }
+        .zf-phone .zf-tempContDiv label, .zf-date .zf-tempContDiv label, .zf-time .zf-tempContDiv label, .zf-address .zf-tempContDiv label, .zf-name .zf-tempContDiv span label {
+            color: #252c3e;
+            opacity: .8;
+        }
+        .zf-phone .zf-tempContDiv span label {
+            display: block;
+            padding-top: 3px;
+            text-align: left;
+        }
+        .zf-phone .zf-tempContDiv .zf-symbols {
+            display: block;
+            margin: 9px 1%;
+            width: 2%;
+            text-align: center;
+            padding: 0;
+            padding-top: 3px;
+        }
+        .zf-currency .zf-tempContDiv span {
+            display: inline-block;
+            font-size: 15px;
+            font-weight: 600;
+            color: #252c3e;
+            margin-right: 8px;
+            float: left;
+            margin-top: 10px;
+        }
+        .zf-currency .zf-tempContDiv input[type="text"]~span {
+            margin-left: 8px;
+            margin-right: 0;
+            float: none;
+        }
+        .zf-currency .zf-tempContDiv span label { display: block; padding-top: 3px; }
+        .zf-currency .zf-tempContDiv .zf-symbol {
+            font-size: 14px;
+            margin-left: 5px;
+            margin-top: 4px;
+            width: auto;
+            font-weight: bold;
+        }
+        .zf-decesion .zf-tempContDiv { width: 100% !important; margin-top: 4px; }
+        .zf-decesion input[type="checkbox"] {
+            display: block;
+            height: 13px;
+            margin: 0;
+            padding: 0;
+            width: 13px;
+            float: left;
+            margin-top: 4px;
+        }
+        .zf-decesion label {
+            display: block;
+            margin: 0px 0 0 25px !important;
+            padding-bottom: 0 !important;
+            width: 95% !important;
+            float: none !important;
+            line-height: 21px !important;
+            text-align: left !important;
+        }
+        .zf-tempContDiv input[type="file"] {
+            outline: none;
+            margin: 0 auto;
+            width: 50%;
+            border: 1px dashed rgba(184, 187, 211, 1);
+            border-radius: 4px;
+            display: inline-block;
+            vertical-align: middle;
+            padding: 12px 12px;
+            font-size: 15px;
+            color: rgb(37, 44, 62);
+        }
+        .zf-address .zf-tempContDiv span, .zf-geolocation .zf-tempContDiv span {
+            display: block;
+            padding-top: 15px;
+        }
+        .zf-address .address_row_1 .zf-addresCols { padding-top: 0; }
+        .zf-address .zf-tempContDiv span label, .zf-geolocation .zf-tempContDiv span label { display: block; }
+        .zf-address .zf-tempContDiv .zf-addOne, .zf-geolocation .zf-tempContDiv .zf-addOne {
+            float: none;
+            padding-bottom: 15px;
+            margin-right: 0;
+            padding-right: 0;
+        }
+        .zf-address .zf-tempContDiv .zf-addOne input, .zf-geolocation .zf-tempContDiv .zf-addOne input { width: 100%; }
+        .zf-leftAlign .zf-address .zf-tempContDiv span.zf-addtwo, .zf-leftAlign .zf-geolocation .zf-tempContDiv span.zf-addtwo, .zf-rightAlign .zf-address .zf-tempContDiv span.zf-addtwo, .zf-rightAlign .zf-geolocation .zf-tempContDiv span.zf-addtwo { width: 100%; }
+        .zf-leftAlign .zf-address.zf-addrmedium .zf-tempContDiv span.zf-addtwo, .zf-leftAlign.zf-addrmedium .zf-geolocation .zf-tempContDiv span.zf-addtwo, .zf-rightAlign .zf-address.zf-addrmedium .zf-tempContDiv span.zf-addtwo, .zf-rightAlign.zf-addrmedium .zf-geolocation .zf-tempContDiv span.zf-addtwo { width: 47%; float: left; }
+        .zf-leftAlign .zf-address.zf-addrlarge .zf-tempContDiv span.zf-addtwo, .zf-leftAlign.zf-addrlarge .zf-geolocation .zf-tempContDiv span.zf-addtwo, .zf-rightAlign .zf-address.zf-addrlarge .zf-tempContDiv span.zf-addtwo, .zf-rightAlign.zf-addrlarge .zf-geolocation .zf-tempContDiv span.zf-addtwo { width: 48%; float: left; }
+        .zf-leftAlign .zf-address.zf-addrlarge .zf-tempContDiv span.zf-addtwo:nth-last-of-type(2), .zf-leftAlign .zf-address.zf-addrmedium .zf-tempContDiv span.zf-addtwo:nth-last-of-type(2), .zf-rightAlign .zf-address.zf-addrlarge .zf-tempContDiv span.zf-addtwo:nth-last-of-type(2), .zf-rightAlign .zf-address.zf-addrmedium .zf-tempContDiv span.zf-addtwo:nth-last-of-type(2) { padding-bottom: 0; }
+        .zf-address .zf-tempContDiv span.zf-addtwo:nth-child(even), .zf-geolocation .zf-tempContDiv span.zf-addtwo:nth-child(even) { padding-right: 0; }
+        .zf-address .zf-tempContDiv span.zf-addtwo input, .zf-geolocation .zf-tempContDiv span.zf-addtwo input { width: 100%; }
+        .zf-address .zf-tempContDiv span.zf-addtwo .zf-form-sBox { width: 100%; }
+        .zf-signContainer { margin: 0; padding: 0; width: 100%; }
+        .zf-signContainer canvas {
+            cursor: crosshair;
+            border: 1px solid rgba(184, 187, 211, 1);
+            background: #fff;
+            border-radius: 5px;
+            width: 100%;
+            height: 130px;
+            box-sizing: border-box;
+        }
+        .zf-signContainer a {
+            font-size: 14px;
+            text-decoration: underline;
+            display: block;
+            color: #465475;
+            margin-top: 8px;
+        }
+        .zf-section h2 {
+            border-bottom: 1px solid #a7abb2;
+            font-size: 22px;
+            color: #000;
+            font-weight: 500;
+            padding-bottom: 10px;
+        }
+        .zf-section p { color: #465475; margin-top: 10px; font-size: 15px; }
+        .zf-note .zf-labelName { padding-top: 7px; }
+        .zf-templateWrapper .zf-note { overflow: hidden; }
+        .zf-date .zf-tempContDiv span label {
+            display: block;
+            text-align: left;
+            color: #252c3e;
+            padding-top: 8px;
+            font-size: 14px;
+            opacity: .8;
+        }
+        .zf-subDate { margin-right: 10px; }
+        .zf-subDate label { text-align: left !important; }
+        .zf-time .zf-tempContDiv span label {
+            display: block;
+            padding-top: 8px;
+            font-size: 13px;
+        }
+        .zf-time .zf-tempContDiv .zf-form-sBox {
+            min-width: 58px;
+            width: 72px;
+            padding: 9px 20px 10px 6px;
+        }
+        .zf-time .zf-tempContDiv .zf-symbols { padding-top: 12px; }
+        .zf-tempContDiv input[type="checkbox"], .zf-tempContDiv input[type="radio"] {
+            display: block;
+            height: 13px;
+            margin: 4px 0 0;
+            padding: 0;
+            width: 13px;
+            cursor: pointer;
+        }
+        .zf-tempContDiv input[type="radio"] {
+            -webkit-appearance: none;
+            border: 1.2px solid #47476b;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+        }
+        .zf-tempContDiv input[type="radio"]~label { cursor: pointer; }
+        .zf-tempContDiv input[type="checkbox"] {
+            -webkit-appearance: none;
+            border-radius: 3px;
+            border: 1.2px solid #47476b;
+            transition: 0.5s ease all;
+            position: relative;
+            width: 20px;
+            height: 20px;
+        }
+        .zf-tempContDiv input[type="checkbox"]~label { cursor: pointer; }
+        .zf-tempContDiv .zf-termsAccept input[type="checkbox"]~label { cursor: default; }
+        .zf-tempContDiv input[type="radio"]:before {
+            content: '';
+            display: block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-top: 3px;
+            margin-left: 3px;
+            box-sizing: border-box;
+        }
+        .zf-tempContDiv input[type="checkbox"]:before {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 60%;
+            margin: 19% auto;
+        }
+        .zf-tempContDiv input[type="radio"]:checked:before { background: rgba(46, 183, 159, 1); }
+        .zf-tempContDiv input[type="radio"]:checked {
+            border: 1.2px solid rgba(46, 183, 159, 1);
+            box-shadow: 0px 0px 0px 0.5px rgba(46, 183, 159, 1);
+            outline: none;
+        }
+        .zf-tempContDiv input[type="checkbox"]:checked {
+            border: 1.2px solid rgba(46, 183, 159, 1);
+            box-shadow: 0px 0px 2px 0px rgba(46, 183, 159, 1);
+            outline: none;
+        }
+        .zf-tempContDiv input[type="checkbox"]:checked:before {
+            content: " ";
+            display: inline-block;
+            transform: rotate(45deg);
+            height: 10px;
+            width: 4px;
+            border-bottom: 2px solid rgba(46, 183, 159, 1);
+            border-right: 2px solid rgba(46, 183, 159, 1);
+            position: absolute;
+            top: -2px;
+            left: 6px;
+        }
+        .zf-sideBySide .zf-tempContDiv span {
+            margin: 0 4% 16px 0;
+            padding: 0;
+            width: auto;
+            float: left;
+            display: block;
+        }
+        .zf-sideBySide .zf-tempContDiv span input[type="checkbox"] {
+            display: block;
+            min-width: 20px;
+            width: 20px;
+            height: 20px;
+            padding: 0;
+            margin-top: 1px;
+            float: left;
+            margin-left: 2px;
+        }
+        .zf-sideBySide .zf-tempContDiv span input[type="radio"] {
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin-top: 1px;
+            padding: 0;
+            float: left;
+            margin-left: 1px;
+        }
+        .zf-sideBySide .zf-tempContDiv span label {
+            line-height: 21px;
+            display: block;
+            padding: 0 0 0 32px;
+            cursor: pointer;
+            font-size: 15px;
+            color: #47476b;
+        }
+        .zf-oneColumns .zf-tempContDiv span {
+            margin: 0 0 16px 0;
+            padding: 0;
+            width: 100%;
+            display: block;
+            clear: both;
+        }
+        .zf-oneColumns .zf-multiAttType label~input[type="text"], .zf-twoColumns .zf-multiAttType label~input[type="text"], .zf-threeColumns .zf-multiAttType label~input[type="text"], .zf-sideBySide .zf-multiAttType label~input[type="text"] {
+            margin-top: 15px;
+            width: 100%;
+        }
+        .zf-oneColumns .zf-tempContDiv span:last-child { margin-bottom: 0; }
+        .zf-oneColumns .zf-tempContDiv span input[type="checkbox"] {
+            display: block;
+            min-width: 20px;
+            width: 20px;
+            height: 20px;
+            margin: 0;
+            padding: 0;
+            margin-top: 1px;
+            float: left;
+            margin-left: 2px;
+        }
+        .zf-oneColumns .zf-tempContDiv span input[type="radio"] {
+            display: block;
+            min-width: 20px;
+            width: 20px;
+            height: 20px;
+            margin-top: 1px;
+            padding: 0;
+            float: left;
+            margin-left: 1px;
+        }
+        .zf-oneColumns .zf-tempContDiv span label {
+            line-height: 21px;
+            display: block;
+            margin: 0 0 0 32px;
+            padding: 0;
+            font-size: 15px;
+            color: #47476b;
+        }
+        .zf-twoColumns .zf-tempContDiv span {
+            margin: 0 4% 16px 0;
+            width: 48%;
+            float: left;
+            display: block;
+        }
+        .zf-twoColumns .zf-tempContDiv span:nth-child(even) { margin-right: 0; }
+        .zf-twoColumns .zf-tempContDiv span input[type="checkbox"] {
+            display: block;
+            min-width: 20px;
+            width: 20px;
+            height: 20px;
+            margin: 0;
+            padding: 0;
+            margin-top: 1px;
+            float: left;
+            margin-left: 2px;
+        }
+        .zf-twoColumns .zf-tempContDiv span input[type="radio"] {
+            display: block;
+            min-width: 20px;
+            width: 20px;
+            height: 20px;
+            margin-top: 1px;
+            padding: 0;
+            float: left;
+            margin-left: 1px;
+        }
+        .zf-twoColumns .zf-tempContDiv span label {
+            line-height: 21px;
+            display: block;
+            margin: 0 0 0 32px;
+            padding: 0;
+            font-size: 15px;
+            color: #47476b;
+        }
+        .zf-threeColumns .zf-tempContDiv span {
+            margin: 0 4% 15px 0;
+            width: 30.6%;
+            float: left;
+            display: block;
+        }
+        .zf-threeColumns .zf-tempContDiv span:nth-child(3n) { margin-right: 0; }
+        .zf-threeColumns .zf-tempContDiv span input[type="checkbox"] {
+            display: block;
+            min-width: 20px;
+            width: 20px;
+            height: 20px;
+            padding: 0;
+            margin-top: 1px;
+            float: left;
+            margin-left: 2px;
+        }
+        .zf-threeColumns .zf-tempContDiv span input[type="radio"] {
+            display: block;
+            min-width: 20px;
+            width: 20px;
+            height: 20px;
+            margin-top: 1px;
+            padding: 0;
+            float: left;
+            margin-left: 1px;
+        }
+        .zf-threeColumns .zf-tempContDiv span label {
+            line-height: 21px;
+            display: block;
+            margin: 0 0 0 32px;
+            padding: 0;
+            font-size: 15px;
+            color: #47476b;
+        }
+        .zf-mSelect select {
+            font-size: 15px;
+            border: 1px solid rgba(184, 187, 211, 1);
+            overflow: auto;
+            border-radius: 4px;
+            color: #47476b;
+            outline: none;
+            box-sizing: border-box;
+            height: 101px;
+        }
+        .zf-mSelect select option { padding: 8px 10px; box-sizing: border-box; }
+        .zf-fmFooter {
+            margin: 0;
+            padding: 10px 25px 40px 25px;
+            text-align: center;
+        }
+        .zf-fmFooter .zf-submitColor { font-size: 16px; padding: 13px 38px; }
+        .zf-submitColor {
+            color: #fff;
+            border: 1px solid transparent;
+            background: rgba(46, 183, 159, 1);
+            border-radius: 150px;
+            min-width: 100px;
+            transition: transform .25s cubic-bezier(0.33, 0.04, 0.63, 0.93), -webkit-transform .25s cubic-bezier(0.33, 0.04, 0.63, 0.93), -o-transform .25s cubic-bezier(0.33, 0.04, 0.63, 0.93);
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            cursor: pointer;
+        }
+        .zf-submitColor:hover {
+            -webkit-transform: scale3d(1.03, 1.03, 1) translate3d(0, 0, 0) perspective(500px);
+            transform: scale3d(1.03, 1.03, 1) translate3d(0, 0, 0) perspective(500px);
+        }
+        .zf-small .zf-tempContDiv input[type="text"], .zf-small .zf-tempContDiv textarea, .zf-small .zf-mSelect select, .zf-small .zf-tempContDiv .zf-sliderCont, .zf-small .zf-tempContDiv .zf-pdfTextArea, .zf-small .zf-signContainer { width: 50%; }
+        .zf-medium .zf-tempContDiv input[type="text"], .zf-medium .zf-tempContDiv textarea, .zf-medium .zf-mSelect select, .zf-medium .zf-tempContDiv .zf-sliderCont, .zf-medium .zf-tempContDiv .zf-pdfTextArea, .zf-medium .zf-signContainer { width: 75%; }
+        .zf-large .zf-tempContDiv input[type="text"], .zf-large .zf-tempContDiv textarea, .zf-large .zf-mSelect select, .zf-large .zf-tempContDiv .zf-sliderCont, .zf-large .zf-tempContDiv .zf-pdfTextArea, .zf-large .zf-signContainer { width: 100%; }
+        .signContainer canvas { width: 100%; }
+        .zf-small .zf-tempContDiv .zf-form-sBox { width: 50%; }
+        .zf-medium .zf-tempContDiv .zf-form-sBox { width: 75%; }
+        .zf-large .zf-tempContDiv .zf-form-sBox { width: 100%; }
+        .zf-name .zf-tempContDiv .zf-form-sBox { width: 100%; padding: 8px 10px 10px 4px; }
+        .zf-namesmall .zf-nameWrapper { width: 50%; }
+        .zf-namesmall .zf-tempContDiv span { width: 49%; margin-left: 2%; }
+        .zf-namesmall .zf-oneType .zf-salutationWrapper span { width: 63%; }
+        .zf-namesmall .zf-oneType .zf-salutationWrapper .zf-salutation { width: 33%; }
+        .zf-namesmall .zf-twoType .zf-salutationWrapper span { width: 34%; margin-left: 3%; }
+        .zf-namesmall .zf-twoType .zf-salutationWrapper .zf-salutation { width: 26%; }
+        .zf-namesmall .zf-threeType .zf-nameWrapper span { width: 32%; margin-left: 2%; }
+        .zf-namesmall .zf-threeType .zf-salutationWrapper span { width: 25%; float: left; margin-left: 2%; margin-bottom: 0; }
+        .zf-namesmall .zf-threeType .zf-salutationWrapper .zf-salutation { width: 19%; }
+        .zf-namesmall .zf-tempContDiv span:first-child { margin-left: 0; }
+        .zf-leftAlign .zf-namesmall .zf-threeType .zf-salutationWrapper span, .zf-rightAlign .zf-namesmall .zf-threeType .zf-salutationWrapper span { float: left; margin-left: 2%; width: 25%; }
+        .zf-leftAlign .zf-namesmall .zf-threeType .zf-salutationWrapper .zf-salutation, .zf-rightAlign .zf-namesmall .zf-threeType .zf-salutationWrapper .zf-salutation { width: 19%; }
+        .zf-namemedium .zf-nameWrapper { width: 75%; }
+        .zf-namemedium .zf-tempContDiv span { width: 49%; margin-left: 2%; }
+        .zf-namemedium .zf-oneType .zf-salutationWrapper span { width: 73%; }
+        .zf-namemedium .zf-oneType .zf-salutationWrapper .zf-salutation { width: 25%; }
+        .zf-namemedium .zf-twoType .zf-salutationWrapper span { width: 38%; margin-left: 2%; }
+        .zf-namemedium .zf-twoType .zf-salutationWrapper .zf-salutation { width: 20%; }
+        .zf-namemedium .zf-threeType .zf-nameWrapper span { width: 32%; margin-left: 2%; }
+        .zf-namemedium .zf-threeType .zf-salutationWrapper span { width: 25%; margin-left: 2%; }
+        .zf-namemedium .zf-threeType .zf-salutationWrapper .zf-salutation { width: 19%; }
+        .zf-namemedium .zf-tempContDiv span:first-child { margin-left: 0; }
+        .zf-namelarge .zf-tempContDiv span { width: 23.5%; margin-left: 2%; margin-right: 0; margin-bottom: 0; }
+        .zf-namelarge .zf-twoType .zf-nameWrapper span { width: 49%; margin-left: 2%; }
+        .zf-namelarge .zf-threeType .zf-nameWrapper span { width: 32%; margin-left: 2%; }
+        .zf-namelarge .zf-twoType .zf-salutationWrapper span { width: 40%; margin-left: 2%; }
+        .zf-namelarge .zf-twoType .zf-salutationWrapper .zf-salutation { width: 16%; }
+        .zf-namelarge .zf-threeType .zf-salutationWrapper span { width: 26%; margin-left: 2%; }
+        .zf-namelarge .zf-threeType .zf-salutationWrapper .zf-salutation { width: 19.8%; }
+        .zf-namelarge .zf-oneType .zf-salutationWrapper span { width: 73%; margin-left: 2%; }
+        .zf-namelarge .zf-oneType .zf-salutationWrapper .zf-salutation { width: 25%; }
+        .zf-namelarge .zf-tempContDiv span:first-child { margin-left: 0 !important; }
+        .zf-csmall .zf-tempContDiv input[type="text"] { width: 100%; }
+        .zf-cmedium .zf-tempContDiv input[type="text"] { width: 100%; }
+        .zf-clarge .zf-tempContDiv input[type="text"] { width: 100%; }
+        .zf-nsmall .zf-tempContDiv input[type="text"] { width: 50%; }
+        .zf-nmedium .zf-tempContDiv input[type="text"] { width: 75%; }
+        .zf-nlarge .zf-tempContDiv input[type="text"] { width: 100%; }
+        .zf-signSmall .zf-tempContDiv .zf-signContainer .zf-signArea { width: 49%; }
+        .zf-signMedium .zf-tempContDiv .zf-signContainer .zf-signArea { width: 60%; }
+        .zf-signLarge .zf-tempContDiv .zf-signContainer .zf-signArea { width: 74%; }
+        .zf-addrsmall .zf-tempContDiv .zf-addrCont { width: 50%; }
+        .zf-addrmedium .zf-tempContDiv .zf-addrCont { width: 75%; }
+        .zf-addrlarge .zf-tempContDiv .zf-addrCont { width: 100%; }
+        .zf-leftAlign .zf-currency .zf-tempContDiv input[type="text"], .zf-rightAlign .zf-currency .zf-tempContDiv input[type="text"] { float: left; }
+        .zf-leftAlign .zf-currency.zf-clarge .zf-tempContDiv input[type="text"], .zf-rightAlign .zf-currency.zf-clarge .zf-tempContDiv input[type="text"] { float: left; }
+        .zf-leftAlign .zf-currency.zf-clarge .zf-tempContDiv input[type="text"]~span, .zf-rightAlign .zf-currency.zf-clarge .zf-tempContDiv input[type="text"]~span { margin-top: 9px; }
+        .zf-topAlign .zf-tempFrmWrapper .zf-labelName { padding-bottom: 10px; display: block; }
+        .zf-topAlign .zf-threeColumns .zf-labelName, .zf-topAlign .zf-twoColumns .zf-labelName, .zf-topAlign .zf-oneColumns .zf-labelName, .zf-topAlign .zf-sideBySide .zf-labelName { padding-bottom: 8px; }
+        .zf-leftAlign { display: block; }
+        .zf-leftAlign .zf-tempFrmWrapper .zf-labelName { float: left; width: 30%; line-height: 20px; padding-right: 30px; box-sizing: border-box; }
+        .zf-leftAlign .zf-tempFrmWrapper .zf-tempContDiv { float: right; width: 70%; }
+        .zf-leftAlign .zf-slider .zf-tempContDiv { margin-top: 6px; }
+        .zf-leftAlign .zf-decesion .zf-tempContDiv, .zf-rightAlign .zf-decesion .zf-tempContDiv { margin-left: 0 !important; }
+        .zf-rightAlign { display: block; }
+        .zf-rightAlign .zf-tempFrmWrapper .zf-labelName { float: left; width: 30%; line-height: 20px; text-align: right; padding-right: 30px; box-sizing: border-box; }
+        .zf-rightAlign .zf-tempFrmWrapper .zf-tempContDiv { float: right; width: 70%; }
+        .zf-matrixTable { font-size: 13px; overflow-x: auto; padding-bottom: 15px !important; }
+        .zf-matrixTable table th, .zf-matrixTable table td { padding: 10px; }
+        .zf-matrixTable thead th, .zf-matrixTable table td { text-align: center; }
+        .zf-matrixTable table td input[type="radio"], .zf-matrixTable table td input[type="checkbox"] { display: inline-block; }
+        .zf-matrixTable tbody th { font-weight: normal; font-size: 16px; text-align: left; padding: 12px 10px; color: #252c3e; width: 218px; box-sizing: border-box; }
+        .zf-matrixTable thead th { word-break: normal; font-weight: normal; font-size: 16px; padding: 12px 10px; color: #252c3e; text-align: center; }
+        .zf-termsContainer { margin: 0; padding: 0; }
+        .zf-termsContainer .zf-termsMsg {
+            border: 1px solid #252c3e;
+            max-height: 250px;
+            overflow-y: auto;
+            padding: 12px 10px 12px;
+            margin-bottom: 12px;
+            border-radius: 4px;
+            min-height: 70px;
+            font-size: 13px;
+        }
+        .zf-termsContainer .zf-termScrollRemove {
+            border: 1px solid #252c3e;
+            overflow-y: auto;
+            padding: 12px 10px 12px;
+            margin-bottom: 12px;
+            border-radius: 4px;
+            min-height: 70px;
+            font-size: 13px;
+        }
+        .zf-termsAccept { margin-top: 0 !important; }
+        .zf-termsAccept input[type="checkbox"] { margin-top: 0 !important; float: left; }
+        .zf-termsAccept label { margin-left: 30px; font-size: 15px; float: none; display: block; color: #252c3e; }
+        .zf-termsWrapper .zf-tempContDiv { margin-left: 0 !important; }
+        .zf-termsWrapper .zf-labelName { width: 100% !important; text-align: left !important; padding-bottom: 8px !important; }
+        .zf-medium .zf-phwrapper { width: 75%; }
+        .zf-phwrapper.zf-phNumber span { width: 100% !important; }
+        .zf-phwrapper span:first-child { margin-left: 0; width: 22%; }
+        .zf-phwrapper label { display: block; color: #252c3e; font-size: 13px; padding-top: 8px; opacity: 0.8; }
+        .zf-medium .zf-phonefld input[type="text"], .zf-small .zf-phonefld input[type="text"] { width: 100%; }
+        .zf-small .zf-phwrapper { width: 50%; }
+        .zf-tempFrmWrapper.zf-phone span { width: 30%; margin: inherit; }
+        .zf-tempFrmWrapper .zfPhoneUSA span { width: 22.3%; position: relative; }
+        .zf-tempFrmWrapper.zf-phone span input[type="text"] { width: 100%; }
+        .zfMultiColGrid .zf-tempFrmWrapper.zf-phone .zf-symbols { display: none; }
+        .zf-tempFrmWrapper.zf-phone .zfPhoneUSA { display: flex; }
+        .zfMultiColGrid .zf-tempFrmWrapper.zf-phone .zfPhoneUSA span, .zfoneColumn .zf-tempFrmWrapper.zf-phone .zfPhoneUSA span { width: 30%; flex: 1 1 auto; margin-left: 8px; }
+        .zf-tempFrmWrapper.zf-phone .zfPhoneUSA span:first-of-type { margin-left: 0; }
+        .zf-phwrapper span { float: left; width: 76%; margin-left: 2%; }
+        .zf-descFld a { text-decoration: underline; color: #252c3e; }
+        .zf-descFld em { font-style: italic; }
+        .zf-descFld b { font-weight: bold; }
+        .zf-descFld i { font-style: italic; }
+        .zf-descFld u { text-decoration: underline; }
+        .zf-descFld ul { margin: auto; }
+        .zf-descFld ul { list-style: disc; }
+        .zf-descFld ol { list-style: decimal; }
+        .zf-descFld ul, .zf-descFld ol { margin: 10px 0; padding-left: 20px; }
+        .zf-descFld ol.code { list-style-position: outside; list-style-type: decimal; padding: 0 30px; }
+        .zf-descFld ol.code li { background-color: #F5F5F5; border-left: 2px solid #CCCCCC; margin: 1px 0; padding: 2px; }
+        .zf-descFld blockquote.zquote { border-left: 3px solid #EFEFEF; padding-left: 35px; }
+        .zf-descFld blockquote.zquote span.txt { -moz-user-focus: ignore; -moz-user-input: disabled; -moz-user-select: none; color: #058BC2; float: left; font: bold 50px Arial, Helvetica, sans-serif; margin: -10px 0 0 -30px; }
+        .zf-descFld blockquote.block_quote { background: url("../images/newQuote.gif") no-repeat scroll 12px 10px rgba(0, 0, 0, 0); border-left: 3px solid #EFEFEF; font: 13px/20px georgia, Arial, verdana, Helvetica, sans-serif; margin: 15px 3px 15px 15px; padding: 10px 10px 10px 40px; }
+        .zf-descFld body { font-family: Arial, Helvetica, sans-serif; font-size: 13px; margin: 8px; }
+        .note .noteCont { overflow: hidden; }
+        .note .zf-descFld { overflow: hidden; font-size: 13px; }
+        .zf-descFld img { width: auto; }
+        .zf-date .zf-tempContDiv input[type="text"] { width: 340px; }
+        .zf-leftAlign .zf-date .zf-tempContDiv input[type="text"], .zf-rightAlign .zf-date .zf-tempContDiv input[type="text"] { width: 238px; }
+        .zf-leftAlign .zf-date.zf-time .zf-tempContDiv input[type="text"], .zf-rightAlign .zf-date.zf-time .zf-tempContDiv input[type="text"] { width: 223px; }
+        .zf-decesion .zf-tempContDiv input[type="checkbox"] { margin-top: 0; }
+        .zf-tempFrmWrapper.zf-decesion .zf-labelName { margin-left: 28px !important; }
+        .zf-leftAlign .zf-tempFrmWrapper .zf-matrixTable, .zf-rightAlign .zf-tempFrmWrapper .zf-matrixTable { width: 100%; clear: both; float: none; padding-top: 10px; }
+        .zf-leftAlign .zf-tempFrmWrapper.zf-termsandCond .zf-tempContDiv, .zf-rightAlign .zf-tempFrmWrapper.zf-termsandCond .zf-tempContDiv { float: none; width: 100%; clear: both; padding-top: 10px; }
+        .zf-leftAlign .zf-tempFrmWrapper.zf-termsandCond .zf-labelName, .zf-rightAlign .zf-tempFrmWrapper.zf-termsandCond .zf-labelName { width: 100%; float: none; text-align: left; display: block; }
+        .zf-leftAlign .zf-namesmall .zf-threeType .zf-salutationWrapper span:first-of-type, .zf-rightAlign .zf-namesmall .zf-threeType .zf-salutationWrapper span:first-of-type { margin-left: 0; }
+        .zf-rightAlign .zf-tempFrmWrapper.zf-matrixTable .zf-labelName { text-align: left; }
+        .zfAddressTwoCol { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0 16px; }
+        .zf-address .zf-tempContDiv .zfAddressTwoCol .zf-addOne { width: 47%; }
+        .zf-addrCont .zfAddressTwoCol~.zfAddressTwoCol span.zf-addtwo:last-of-type { padding-bottom: 0; }
+        .zf-csmall.zf-currency .zf-tempContDiv>div { width: 50%; display: inline-flex; }
+        .zf-cmedium.zf-currency .zf-tempContDiv>div { width: 75%; display: inline-flex; }
+        .zf-clarge.zf-currency .zf-tempContDiv>div { width: 100%; display: inline-flex; }
+        .zf-nameWrapper.zf-salutationWrapper { display: flex; }
+        .zf-leftAlign .zf-tempFrmWrapper .zf-termsandCond { float: none; width: 100%; }
+        .zf-tempContDiv span input[type="checkbox"]:focus { border: 1.2px solid rgb(46, 183, 159, 1); box-shadow: 0px 0px 2px 0px rgb(46, 183, 159, 1); }
+        .zf-multiAttType.fullColWrap, .zf-twoColumns .zf-tempContDiv .zf-multiAttType.fullColWrap, .zf-threeColumns .zf-tempContDiv .zf-multiAttType.fullColWrap, .zf-sideBySide .zf-tempContDiv .zf-multiAttType.fullColWrap { width: 100%; }
+        .zf-address.zf-tempContDiv .zf-form-sBox, .zf-address.zf-tempContDiv input[type="text"] { width: 100%; }
+        .address_row_3, .address_row_4 { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0 16px; }
+        .address_row_3 span.zf-addresCols, .address_row_4 span.zf-addresCols { width: 47%; flex: 1 1 auto; }
+        .address_row_1 .zf-addresCols, .address_row_2 .zf-addresCols, .address_row_3 .zf-addresCols, .address_row_4 .zf-addresCols { width: 100%; }
+        .zf-tempFrmWrapper.gridName .zf-twoType .zf-nameWrapper span { width: 100%; margin-left: 0; margin-bottom: 15px; }
+        .zf-tempFrmWrapper.gridName .zf-threeType .zf-salutationWrapper .zf-salutation { width: 100%; margin-left: 0; }
+        .zf-tempFrmWrapper.gridName .zf-threeType .zf-salutationWrapper span { width: 100%; margin-left: 0; margin-bottom: 15px; }
+        .zf-tempFrmWrapper.gridName .zf-nameWrapper.zf-salutationWrapper { display: block; }
+        .zf-templateWrapper .zf-note table td { word-break: break-all; }
+        .zf-leftAlign .zf-tempFrmWrapper.zf-matrixTable .zf-labelName { width: 100%; }
+
+        /* Grid Related */
+        .zfgrid_Wrapper { padding: 0 40px 0 40px; margin: 0; box-sizing: border-box; }
+        .zfgridLabelCont { padding: 12px 0; }
+        .zfgridLabelCont label { font-size: 22px; color: #252c3e; }
+        .zfgridLabelCont span { font-size: 14px; color: #465474; padding-top: 8px; display: block; }
+        .zftwoColumn, .zfthreeColumn { display: flex; flex-wrap: nowrap; gap: 32px; }
+        .zfoneColumn .zfCol { max-width: 100%; }
+        .zftwoColumn .zfCol { flex: 1 1; overflow-x: hidden; max-width: 50%; }
+        .zfthreeColumn .zfCol { flex: 1 1; overflow-x: hidden; max-width: 33%; }
+        .zfgrid_Wrapper .zf-tempFrmWrapper { padding-left: 0; padding-right: 0; }
+        .zfMultiColGrid .zf-medium .zf-tempContDiv input[type="text"], .zfMultiColGrid .zf-medium .zf-tempContDiv textarea, .zfMultiColGrid .zf-medium .zf-mSelect select, .zfMultiColGrid .zf-medium .zf-tempContDiv .zf-sliderCont, .zfMultiColGrid .zf-medium .zf-tempContDiv .zf-pdfTextArea, .zfMultiColGrid .zf-medium .zf-signContainer { width: 100%; }
+        .zfMultiColGrid .zf-small .zf-tempContDiv input[type="text"], .zfMultiColGrid .zf-small .zf-tempContDiv textarea, .zfMultiColGrid .zf-small .zf-mSelect select, .zfMultiColGrid .zf-small .zf-tempContDiv .zf-sliderCont, .zfMultiColGrid .zf-small .zf-tempContDiv .zf-pdfTextArea, .zfMultiColGrid .zf-small .zf-signContainer { width: 100%; }
+        .zfMultiColGrid .zf-medium .zf-phwrapper { width: 100%; }
+        .zfMultiColGrid .zf-small .zf-phwrapper { width: 100%; }
+        .zfMultiColGrid .zf-tempFrmWrapper.zf-phone span, .zfoneColumn .zf-tempFrmWrapper.zf-phone span { width: 30.6%; }
+        .zfoneColumn .zf-tempFrmWrapper.zf-phone span.zf-symbols { display: none; }
+        .zfMultiColGrid .zf-phone .zf-tempContDiv .zf-symbols { margin: 9px 1%; width: 2%; }
+        .zfMultiColGrid .zf-cmedium.zf-currency .zf-tempContDiv>div { width: 100%; }
+        .zfMultiColGrid .zf-csmall.zf-currency .zf-tempContDiv>div { width: 100%; }
+        .zfMultiColGrid .zf-medium .zf-tempContDiv .zf-form-sBox, .zfMultiColGrid .zf-small .zf-tempContDiv .zf-form-sBox { width: 100%; }
+        .zfMultiColGrid .zf-date .zf-tempContDiv input[type="text"], .zfMultiColGrid .zf-date.zf-time .zf-tempContDiv input[type="text"] { width: 100%; }
+        .zfMultiColGrid .zf-tempContDiv input[type="file"] { width: 100%; }
+        .zfMultiColGrid .zf-namemedium .zf-nameWrapper, .zfMultiColGrid .zf-namesmall .zf-nameWrapper { width: 100%; }
+        .zfMultiColGrid .zf-addrmedium .zf-tempContDiv .zf-addrCont, .zfMultiColGrid .zf-addrsmall .zf-tempContDiv .zf-addrCont { width: 100%; }
+        .zftwoColumn .address_row_3, .zftwoColumn .address_row_4, .zfthreeColumn .address_row_3, .zfthreeColumn .address_row_4 { flex-wrap: nowrap; gap: 0 8px; }
+        .zftwoColumn .gridAddress .address_row_3, .zftwoColumn .gridAddress .address_row_4, .zfthreeColumn .gridAddress .address_row_3, .zfthreeColumn .gridAddress .address_row_4 { flex-wrap: wrap; width: 100%; }
+        .gridAddress .address_row_3 .zf-addresCols, .gridAddress .address_row_4 .zf-addresCols { width: 100%; }
+        .zfgrid_Wrapper .zf-time .zf-tempContDiv .zf-symbols { display: none; }
+        .zfMultiColGrid .zf-time .zf-tempContDiv span { width: 32%; margin-right: 2%; }
+        .zfMultiColGrid .zf-time .zf-tempContDiv span:last-of-type { margin-right: 0; }
+        .zfMultiColGrid .zf-time .zf-tempContDiv .zf-form-sBox { min-width: auto; width: 100%; }
+        .zfMultiColGrid .zf-date.zf-time .zf-tempContDiv .zf-subDate { width: 25%; }
+        .zfMultiColGrid .zf-date.zf-time .zf-tempContDiv span { width: 23%; }
+        .zfgrid_Wrapper .zf-oneColumns .zf-tempContDiv span label, .zfgrid_Wrapper .zf-twoColumns .zf-tempContDiv span label, .zfgrid_Wrapper .zf-threeColumns .zf-tempContDiv span label, .zfgrid_Wrapper .zf-sideBySide .zf-tempContDiv span label { word-break: break-all; }
+        .zf-leftAlign .zfMultiColGrid .zf-tempFrmWrapper .zf-labelName, .zf-rightAlign .zfMultiColGrid .zf-tempFrmWrapper .zf-labelName { float: none; display: block; width: 100%; padding-bottom: 10px; text-align: left; }
+        .zf-leftAlign .zfMultiColGrid .zf-tempFrmWrapper .zf-tempContDiv, .zf-rightAlign .zfMultiColGrid .zf-tempFrmWrapper .zf-tempContDiv { float: none; width: 100%; }
+        .zfInstrucTop .zf-instruction { padding: 0px 0px 10px 0px; }
+        .zfInstrucTop .zf-decesion .zf-instruction { padding: 10px 0px 0px 0px; }
+        .zfInstrucTop.zf-topAlign .zf-tempFrmWrapper .zf-labelName { padding-bottom: 6px; display: block; }
+        .zfoneColumn .zf-time .zf-tempContDiv { width: 285px; }
+        .zf-leftAlign .zfoneColumn .zf-time .zf-tempContDiv, .zf-rightAlign .zfoneColumn .zf-time .zf-tempContDiv, .zf-leftAlign .zfoneColumn .zf-time.zf-date .zf-tempContDiv, .zf-rightAlign .zfoneColumn .zf-time.zf-date .zf-tempContDiv { width: 70%; }
+        .zfoneColumn .zf-time .zf-tempContDiv span { width: 25%; margin-right: 14px; }
+        .zf-leftAlign .zfoneColumn .zf-time .zf-tempContDiv span, .zf-rightAlign .zfoneColumn .zf-time .zf-tempContDiv span { width: 72px; }
+        .zfoneColumn .zf-time.zf-date .zf-tempContDiv { width: 100%; }
+        .zfoneColumn .zf-time.zf-date .zf-tempContDiv span { width: 72px; margin-right: 14px; }
+        .zfoneColumn .zf-time.zf-date .zf-tempContDiv .zf-subDate { width: 340px; }
+        .zf-leftAlign .zfoneColumn .zf-time.zf-date .zf-tempContDiv .zf-subDate, .zf-rightAlign .zfoneColumn .zf-time.zf-date .zf-tempContDiv .zf-subDate { width: 223px; }
+        .zf-leftAlign .zfoneColumn .zf-time.zf-date .zf-tempContDiv span, .zf-rightAlign .zfoneColumn .zf-time.zf-date .zf-tempContDiv span { margin-right: 12px; }
+        .zf-leftAlign .zfoneColumn .zf-time.zf-date .zf-tempContDiv span:last-of-type, .zf-rightAlign .zfoneColumn .zf-time.zf-date .zf-tempContDiv span:last-of-type { margin-right: 0; }
+
+        /* Divider */
+        .zf-divider { border-top-color: #b8bbd3 !important; margin: 0 auto; }
+        .zf-small .zf-divider { width: 50%; }
+        .zf-medium .zf-divider { width: 75%; }
+        .zf-large .zf-divider { width: 100%; }
+        .zf-divider.line-One { border-top: 1px; }
+        .zf-divider.line-Two { border-top: 2px; }
+        .zf-divider.line-Three { border-top: 3px; }
+        .zf-divider.line-Four { border-top: 4px; }
+        .zf-divider.line-Five { border-top: 5px; }
+        .zf-divider.line-Six { border-top: 6px; }
+        .zf-divider.line-Seven { border-top: 7px; }
+        .zf-divider.line-Eight { border-top: 8px; }
+        .zf-divider.line-Nine { border-top: 9px; }
+        .zf-divider.line-Ten { border-top: 10px; }
+        .zf-divider.solidType { border-top-style: solid; }
+        .zf-divider.dashedType { border-top-style: dashed; }
+        .zf-divider.dottedType { border-top-style: dotted; }
+        .zf-divider.doubleType { border-top-style: double; }
+        .layout3 .dividerContainer { background: transparent; box-shadow: none; border: none; padding: 12px 0; }
+
+        /* Spacer */
+        .zf-spacer { display: block; width: 100%; margin: 0 auto; background: white; }
+
+        /* Regex */
+        .zf-regexFldCont { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+        .zf-regexTagCont { display: flex; align-items: center; align-self: stretch; gap: 12px; max-width: 100%; }
+        .zf-regexTag { background: #f5f5f5; border: 1px solid #d0d0d0; color: #777; font-size: 13px; border-radius: 2px; padding: 9px 10px; align-self: stretch; }
+        .zf-tempFrmWrapper.fieldModel_4 .zf-regexTag { border-radius: 4px; }
+        .zf-regexSymbol { color: #555; font-size: 13px; flex-shrink: 0; }
+        .zf-regexSymbol.regUnderscore { align-self: flex-end; }
+        .zf-regexInput { display: flex; align-items: center; gap: 12px; max-width: 100%; width: 20%; flex-grow: 1; min-width: 120px; }
+        .zf-regexInput input[type="text"] { width: 100%; box-sizing: border-box; padding: 7px 10px; border: 1px solid #d0d0d0; border-radius: 2px; font-size: 13px; }
+        .zf-regexInput input[type="text"]:focus { outline: none; border-color: #4285f4; }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            .zftwoColumn, .zfthreeColumn { flex-wrap: wrap; }
+            .zftwoColumn .zfCol, .zfthreeColumn .zfCol { max-width: 100%; flex: 1 1 100%; }
+            .zf-tempHeadContBdr { padding: 20px 16px; }
+            .zf-tempHeadContBdr .zf-frmTitle { font-size: 24px; }
+            .zf-tempFrmWrapper { padding: 12px 16px; }
+            .zfgrid_Wrapper { padding: 0 16px; }
+            .zf-leftAlign .zf-tempFrmWrapper .zf-labelName, .zf-rightAlign .zf-tempFrmWrapper .zf-labelName { float: none; width: 100%; padding-right: 0; text-align: left; }
+            .zf-leftAlign .zf-tempFrmWrapper .zf-tempContDiv, .zf-rightAlign .zf-tempFrmWrapper .zf-tempContDiv { float: none; width: 100%; }
+            .zf-name .zf-tempContDiv span { width: 48% !important; margin-left: 2% !important; }
+            .zf-namelarge .zf-tempContDiv span { width: 48% !important; margin-left: 2% !important; }
+            .zf-namelarge .zf-twoType .zf-salutationWrapper span { width: 48% !important; margin-left: 2% !important; }
+            .zf-namelarge .zf-twoType .zf-salutationWrapper .zf-salutation { width: 25% !important; }
+            .zf-tempContDiv input[type="file"] { width: 100%; }
+        }
+        @media (max-width: 480px) {
+            .zf-templateWidth { padding: 16px 8px; }
+            .zf-tempFrmWrapper { padding: 10px 12px; }
+            .zfgrid_Wrapper { padding: 0 12px; }
+            .zf-tempHeadContBdr { padding: 16px 12px; }
+            .zf-tempHeadContBdr .zf-frmTitle { font-size: 20px; }
+            .zf-name .zf-tempContDiv span { width: 100% !important; margin-left: 0 !important; margin-bottom: 8px; }
+            .zf-namelarge .zf-tempContDiv span { width: 100% !important; margin-left: 0 !important; margin-bottom: 8px; }
+            .zf-namelarge .zf-twoType .zf-salutationWrapper span { width: 100% !important; margin-left: 0 !important; }
+            .zf-namelarge .zf-twoType .zf-salutationWrapper .zf-salutation { width: 100% !important; }
+            .zf-phwrapper span { width: 100% !important; margin-left: 0 !important; }
+            .zf-phwrapper.zf-phNumber span { width: 100% !important; }
+            .zf-fmFooter .zf-submitColor { padding: 12px 24px; font-size: 15px; min-width: 80px; }
+        }
+
+        /* Hide/Show utility */
+        .zf-hidden { display: none !important; }
+        .zf-visible { display: block !important; }
+    </style>
+</head>
+<body class="zf-backgroundBg">
+
+<div class="zf-templateWidth">
+    <form action='https://forms.zohopublic.com/infomofuligm1/form/AFMINDDRAUGHTSPLAYERREGISTRATIONFORM/formperma/tkFbWChlZCt96hJgDxCht2bKJuyakOJV-d_4q6KnPRY/htmlRecords/submit'
+          name='form'
+          method='POST'
+          onSubmit='javascript:document.charset="UTF-8"; return zf_ValidateAndSubmit();'
+          accept-charset='UTF-8' enctype='multipart/form-data' id='form'>
+
+        <input type="hidden" name="zf_referrer_name" value="">
+        <input type="hidden" name="zf_redirect_url" value="">
+        <input type="hidden" name="zc_gad" value="">
+
+        <div class="zf-templateWrapper">
+
+            <!-- HEADER -->
+            <ul class="zf-tempHeadBdr">
+                <li class="zf-tempHeadContBdr">
+                    <h2 class="zf-frmTitle"><em>AFMIND DRAUGHTS PLAYER REGISTRATION FORM</em></h2>
+                    <p class="zf-frmDesc"></p>
+                    <div class="zf-clearBoth"></div>
+                </li>
+            </ul>
+
+            <div class="zf-subContWrap zf-topAlign">
+                <ul>
+
+                    <!-- PICHA YA MSHIRIKI (Grid) -->
+                    <div class="zfgrid_Wrapper">
+                        <div class="zftwoColumn zfMultiColGrid">
+                            <div class="zfCol"></div>
+                            <div class="zfCol">
+                                <div class="zf-tempFrmWrapper">
+                                    <label class="zf-labelName">PICHA YA MSHIRIKI <em class="zf-important">*</em></label>
+                                    <div class="zf-tempContDiv">
+                                        <input type="file" accept="image/*" name="ImageUpload2" checktype="c1" />
+                                        <p id="ImageUpload2_error" class="zf-errorMessage" style="display: none;">Choose any file for this field.</p>
+                                    </div>
+                                    <div class="zf-clearBoth"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Full Name -->
+                    <div class="zf-tempFrmWrapper zf-name zf-namelarge">
+                        <label class="zf-labelName">Full name ( Andika Majina matatu) <em class="zf-important"> *</em></label>
+                        <div class="zf-tempContDiv zf-twoType">
+                            <div class="zf-nameWrapper zf-salutationWrapper">
+                                <span class="zf-salutation">
+                                    <select class="zf-form-sBox" name="Name_Salutation" fieldType="7">
+                                        <option value="-Select-">-Select-</option>
+                                        <option value="Mr.">Mr.</option>
+                                        <option value="Mrs.">Mrs.</option>
+                                        <option value="Ms.">Ms.</option>
+                                        <option value="Prof">Prof</option>
+                                        <option value="Eng">Eng</option>
+                                        <option value="Dr">Dr</option>
+                                        <option value="CPA">CPA</option>
+                                    </select>
+                                    <label>Title</label>
+                                </span>
+                                <span>
+                                    <input type="text" maxlength="255" name="Name_Last" fieldType="7" placeholder="" />
+                                    <label>Full Name / Jina Kamili</label>
+                                </span>
+                                <span>
+                                    <input type="text" maxlength="255" name="Name_First" fieldType="7" placeholder="" />
+                                    <label>Nickname / Jina maarufu (Utani)</label>
+                                </span>
+                                <div class="zf-clearBoth"></div>
+                            </div>
+                            <p id="Name_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- Gender -->
+                    <div class="zf-tempFrmWrapper zf-large">
+                        <label class="zf-labelName">Gender / Jinsia</label>
+                        <div class="zf-tempContDiv">
+                            <select class="zf-form-sBox" name="Dropdown8" checktype="c1">
+                                <option selected="true" value="-Select-">-Select-</option>
+                                <option value="Male / Mwanaume">Male / Mwanaume</option>
+                                <option value="Female / Mwanamke">Female / Mwanamke</option>
+                            </select>
+                            <p id="Dropdown8_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- Nationality (trigger for region fields) -->
+                    <div class="zf-tempFrmWrapper zf-large">
+                        <label class="zf-labelName">Nationality / Utaifa <em class="zf-important"> *</em></label>
+                        <div class="zf-tempContDiv">
+                            <select class="zf-form-sBox" name="Dropdown9" id="nationalitySelect" checktype="c1">
+                                <option selected="true" value="-Select-">-Select-</option>
+                                <option value="Tanzania">Tanzania</option>
+                                <option value="Kenya">Kenya</option>
+                                <option value="Uganda">Uganda</option>
+                                <option value="Rwanda">Rwanda</option>
+                                <option value="Burundi">Burundi</option>
+                                <option value="South Sudan">South Sudan</option>
+                            </select>
+                            <p id="Dropdown9_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- ADDRESS -->
+                    <div id="Address" class="zf-tempFrmWrapper zf-address zf-addrlarge">
+                        <label class="zf-labelName">ADDRESS / MAKAZI</label>
+                        <div class="zf-tempContDiv zf-address">
+                            <div class="zf-addrCont">
+                                <div class="address_row_1">
+                                    <span class="zf-addresCols">
+                                        <input type="text" maxlength="255" name="Address_City" checktype="c1" placeholder="" />
+                                        <label>District / Wilaya</label>
+                                    </span>
+                                </div>
+                                <div class="address_row_2">
+                                    <span class="zf-addresCols">
+                                        <input type="text" maxlength="255" name="Address_AddressLine1" checktype="c1" placeholder="" />
+                                        <label>Street / Mtaa</label>
+                                    </span>
+                                </div>
+                                <div class="zf-clearBoth"></div>
+                                <p id="Address_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                            </div>
+                        </div>
+                        <div class="zf-eclearBoth"></div>
+                    </div>
+
+                    <!-- ========== REGION FIELDS (All hidden by default) ========== -->
+                    <!-- MKOA (Tanzania) -->
+                    <div class="zf-tempFrmWrapper zf-large region-field" data-country="Tanzania" style="display:none;">
+                        <label class="zf-labelName">MKOA <em class="zf-important"> *</em></label>
+                        <div class="zf-tempContDiv">
+                            <select class="zf-form-sBox" name="Dropdown10" checktype="c1">
+                                <option selected="true" value="-Select-">-Select-</option>
+                                <option value="Arusha">Arusha</option>
+                                <option value="Dar es Salaam">Dar es Salaam</option>
+                                <option value="Dodoma">Dodoma</option>
+                                <option value="Geita">Geita</option>
+                                <option value="Iringa">Iringa</option>
+                                <option value="Kagera">Kagera</option>
+                                <option value="Katavi">Katavi</option>
+                                <option value="Kigoma">Kigoma</option>
+                                <option value="Kilimanjaro">Kilimanjaro</option>
+                                <option value="Lindi">Lindi</option>
+                                <option value="Manyara">Manyara</option>
+                                <option value="Mara">Mara</option>
+                                <option value="Mbeya">Mbeya</option>
+                                <option value="Morogoro">Morogoro</option>
+                                <option value="Mtwara">Mtwara</option>
+                                <option value="Mwanza">Mwanza</option>
+                                <option value="Njombe">Njombe</option>
+                                <option value="Pwani">Pwani</option>
+                                <option value="Rukwa">Rukwa</option>
+                                <option value="Ruvuma">Ruvuma</option>
+                                <option value="Shinyanga">Shinyanga</option>
+                                <option value="Simiyu">Simiyu</option>
+                                <option value="Singida">Singida</option>
+                                <option value="Songwe">Songwe</option>
+                                <option value="Tabora">Tabora</option>
+                                <option value="Tanga">Tanga</option>
+                                <option value="Unguja Kaskazini">Unguja Kaskazini</option>
+                                <option value="Unguja Kusini">Unguja Kusini</option>
+                                <option value="Mjini Magharibi">Mjini Magharibi</option>
+                                <option value="Pemba Kaskazini">Pemba Kaskazini</option>
+                                <option value="Pemba Kusini">Pemba Kusini</option>
+                            </select>
+                            <p id="Dropdown10_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- County (Kenya) -->
+                    <div class="zf-tempFrmWrapper zf-large region-field" data-country="Kenya" style="display:none;">
+                        <label class="zf-labelName">County <em class="zf-important"> *</em></label>
+                        <div class="zf-tempContDiv">
+                            <select class="zf-form-sBox" name="Dropdown11" checktype="c1">
+                                <option selected="true" value="-Select-">-Select-</option>
+                                <option value="Baringo">Baringo</option>
+                                <option value="Bomet">Bomet</option>
+                                <option value="Bungoma">Bungoma</option>
+                                <option value="Busia">Busia</option>
+                                <option value="Elgeyo-Marakwet">Elgeyo-Marakwet</option>
+                                <option value="Embu">Embu</option>
+                                <option value="Garissa">Garissa</option>
+                                <option value="Homa Bay">Homa Bay</option>
+                                <option value="Isiolo">Isiolo</option>
+                                <option value="Kajiado">Kajiado</option>
+                                <option value="Kakamega">Kakamega</option>
+                                <option value="Kericho">Kericho</option>
+                                <option value="Kiambu">Kiambu</option>
+                                <option value="Kilifi">Kilifi</option>
+                                <option value="Kirinyaga">Kirinyaga</option>
+                                <option value="Kisii">Kisii</option>
+                                <option value="Kisumu">Kisumu</option>
+                                <option value="Kitui">Kitui</option>
+                                <option value="Kwale">Kwale</option>
+                                <option value="Laikipia">Laikipia</option>
+                                <option value="Lamu">Lamu</option>
+                                <option value="Machakos">Machakos</option>
+                                <option value="Makueni">Makueni</option>
+                                <option value="Mandera">Mandera</option>
+                                <option value="Marsabit">Marsabit</option>
+                                <option value="Meru">Meru</option>
+                                <option value="Migori">Migori</option>
+                                <option value="Mombasa">Mombasa</option>
+                                <option value="Murang'a">Murang'a</option>
+                                <option value="Nairobi City">Nairobi City</option>
+                                <option value="Nakuru">Nakuru</option>
+                                <option value="Nandi">Nandi</option>
+                                <option value="Narok">Narok</option>
+                                <option value="Nyamira">Nyamira</option>
+                                <option value="Nyandarua">Nyandarua</option>
+                                <option value="Nyeri">Nyeri</option>
+                                <option value="Samburu">Samburu</option>
+                                <option value="Siaya">Siaya</option>
+                                <option value="Taita-Taveta">Taita-Taveta</option>
+                                <option value="Tana River">Tana River</option>
+                                <option value="Tharaka-Nithi">Tharaka-Nithi</option>
+                                <option value="Trans Nzoia">Trans Nzoia</option>
+                                <option value="Turkana">Turkana</option>
+                                <option value="Uasin Gishu">Uasin Gishu</option>
+                                <option value="Vihiga">Vihiga</option>
+                                <option value="Wajir">Wajir</option>
+                                <option value="West Pokot">West Pokot</option>
+                            </select>
+                            <p id="Dropdown11_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- Sub-Regions (Uganda) -->
+                    <div class="zf-tempFrmWrapper zf-large region-field" data-country="Uganda" style="display:none;">
+                        <label class="zf-labelName">Sub-Regions <em class="zf-important"> *</em></label>
+                        <div class="zf-tempContDiv">
+                            <select class="zf-form-sBox" name="Dropdown12" checktype="c1">
+                                <option selected="true" value="-Select-">-Select-</option>
+                                <option value="Acholi">Acholi</option>
+                                <option value="Ankole">Ankole</option>
+                                <option value="Buganda">Buganda</option>
+                                <option value="Bugisu">Bugisu</option>
+                                <option value="Bunyoro">Bunyoro</option>
+                                <option value="Busoga">Busoga</option>
+                                <option value="Karamoja">Karamoja</option>
+                                <option value="Kigezi">Kigezi</option>
+                                <option value="Lango">Lango</option>
+                                <option value="Sebei">Sebei</option>
+                                <option value="Teso">Teso</option>
+                                <option value="Tooro">Tooro</option>
+                                <option value="West Nile">West Nile</option>
+                                <option value="Bukedi">Bukedi</option>
+                                <option value="Bunyole">Bunyole</option>
+                                <option value="Bugweri">Bugweri</option>
+                                <option value="Busiki">Busiki</option>
+                                <option value="Kooki">Kooki</option>
+                                <option value="Toro">Toro</option>
+                            </select>
+                            <p id="Dropdown12_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- Provinces Rwanda -->
+                    <div class="zf-tempFrmWrapper zf-large region-field" data-country="Rwanda" style="display:none;">
+                        <label class="zf-labelName">Provinces Rwanda <em class="zf-important"> *</em></label>
+                        <div class="zf-tempContDiv">
+                            <select class="zf-form-sBox" name="Dropdown13" checktype="c1">
+                                <option selected="true" value="-Select-">-Select-</option>
+                                <option value="Kigali City">Kigali City</option>
+                                <option value="Eastern Province">Eastern Province</option>
+                                <option value="Northern Province">Northern Province</option>
+                                <option value="Southern Province">Southern Province</option>
+                                <option value="Western Province">Western Province</option>
+                            </select>
+                            <p id="Dropdown13_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- Provinces Burundi -->
+                    <div class="zf-tempFrmWrapper zf-large region-field" data-country="Burundi" style="display:none;">
+                        <label class="zf-labelName">Provinces Burundi <em class="zf-important"> *</em></label>
+                        <div class="zf-tempContDiv">
+                            <select class="zf-form-sBox" name="Dropdown14" checktype="c1">
+                                <option selected="true" value="-Select-">-Select-</option>
+                                <option value="Bubanza">Bubanza</option>
+                                <option value="Bujumbura Mairie">Bujumbura Mairie</option>
+                                <option value="Bujumbura Rural">Bujumbura Rural</option>
+                                <option value="Bururi">Bururi</option>
+                                <option value="Cankuzo">Cankuzo</option>
+                                <option value="Cibitoke">Cibitoke</option>
+                                <option value="Gitega">Gitega</option>
+                                <option value="Karuzi">Karuzi</option>
+                                <option value="Kayanza">Kayanza</option>
+                                <option value="Kirundo">Kirundo</option>
+                                <option value="Makamba">Makamba</option>
+                                <option value="Muramvya">Muramvya</option>
+                                <option value="Muyinga">Muyinga</option>
+                                <option value="Mwaro">Mwaro</option>
+                                <option value="Ngozi">Ngozi</option>
+                                <option value="Rumonge">Rumonge</option>
+                                <option value="Rutana">Rutana</option>
+                                <option value="Ruyigi">Ruyigi</option>
+                            </select>
+                            <p id="Dropdown14_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- States (South Sudan) -->
+                    <div class="zf-tempFrmWrapper zf-large region-field" data-country="South Sudan" style="display:none;">
+                        <label class="zf-labelName">States <em class="zf-important"> *</em></label>
+                        <div class="zf-tempContDiv">
+                            <select class="zf-form-sBox" name="Dropdown15" checktype="c1">
+                                <option selected="true" value="-Select-">-Select-</option>
+                                <option value="Central Equatoria">Central Equatoria</option>
+                                <option value="Eastern Equatoria">Eastern Equatoria</option>
+                                <option value="Jonglei">Jonglei</option>
+                                <option value="Lakes">Lakes</option>
+                                <option value="Northern Bahr el Ghazal">Northern Bahr el Ghazal</option>
+                                <option value="Unity">Unity</option>
+                                <option value="Upper Nile">Upper Nile</option>
+                                <option value="Warrap">Warrap</option>
+                                <option value="Western Bahr el Ghazal">Western Bahr el Ghazal</option>
+                                <option value="Western Equatoria">Western Equatoria</option>
+                            </select>
+                            <p id="Dropdown15_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+                    <!-- ===== END REGION FIELDS ===== -->
+
+                    <!-- Date of Birth -->
+                    <div class="zf-tempFrmWrapper zf-large">
+                        <label class="zf-labelName">Date of Birth / Tarehe ya kuzaliwa</label>
+                        <div class="zf-tempContDiv">
+                            <span>
+                                <input type="text" name="SingleLine3" checktype="c1" value="" maxlength="255" fieldType="1" placeholder="" />
+                            </span>
+                            <p id="SingleLine3_error" class="zf-errorMessage" style="display: none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- Type of identification -->
+                    <div class="zf-tempFrmWrapper zf-large">
+                        <label class="zf-labelName">Type of identification / Aina ya Kitambulisho <em class="zf-important"> *</em></label>
+                        <div class="zf-tempContDiv">
+                            <select class="zf-form-sBox" name="Dropdown" checktype="c1">
+                                <option selected="true" value="-Select-">-Select-</option>
+                                <option value="NIN / Namba ya Utaia (NIDA kwa Tanzania)">NIN / Namba ya Utaia (NIDA kwa Tanzania)</option>
+                                <option value="Passport">Passport</option>
+                                <option value="Voter ID">Voter ID</option>
+                                <option value="Driving Licence">Driving Licence</option>
+                            </select>
+                            <p id="Dropdown_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- ID Number -->
+                    <div class="zf-tempFrmWrapper zf-large">
+                        <label class="zf-labelName">Enter your identification number / Weka namba ya kitambulisho husika <em class="zf-important"> *</em></label>
+                        <div class="zf-tempContDiv">
+                            <span>
+                                <input type="text" name="SingleLine2" checktype="c1" value="" maxlength="255" fieldType="1" placeholder="" />
+                            </span>
+                            <p id="SingleLine2_error" class="zf-errorMessage" style="display: none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- Upload ID -->
+                    <div class="zf-tempFrmWrapper">
+                        <label class="zf-labelName">Upload your identification document / Weka nakala ya kitambulisho <em class="zf-important">*</em></label>
+                        <div class="zf-tempContDiv">
+                            <input type="file" accept="image/*" name="ImageUpload" checktype="c1" />
+                            <p id="ImageUpload_error" class="zf-errorMessage" style="display: none;">Choose any file for this field.</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="zf-tempFrmWrapper zf-large">
+                        <label class="zf-labelName">Enter your phone number / Namba ya Simu <em class="zf-important"> *</em></label>
+                        <div class="zf-tempContDiv zf-phonefld">
+                            <div class="zf-phwrapper zf-phNumber">
+                                <span>
+                                    <input type="text" compname="PhoneNumber" name="PhoneNumber_countrycode" maxlength="20" checktype="c7" value="" phoneFormat="1" isCountryCodeEnabled="false" fieldType="11" id="international_PhoneNumber_countrycode" valType="number" phoneFormatType="1" placeholder="" />
+                                    <label>Number</label>
+                                </span>
+                                <div class="zf-clearBoth"></div>
+                            </div>
+                            <p id="PhoneNumber_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="zf-tempFrmWrapper zf-large">
+                        <label class="zf-labelName">Enter your email address / Barua pepe</label>
+                        <div class="zf-tempContDiv">
+                            <span>
+                                <input type="text" name="Email" checktype="c5" value="" maxlength="255" fieldType="9" placeholder="" />
+                            </span>
+                            <p id="Email_error" class="zf-errorMessage" style="display: none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- Participation Type (trigger for Team Name) -->
+                    <div class="zf-tempFrmWrapper zf-large">
+                        <label class="zf-labelName">Select your participation type / Aina ya Mshiriki <em class="zf-important"> *</em></label>
+                        <div class="zf-tempContDiv">
+                            <select class="zf-form-sBox" name="Dropdown1" id="participationType" checktype="c1">
+                                <option selected="true" value="-Select-">-Select-</option>
+                                <option value="Individual Player / Pekee">Individual Player / Pekee</option>
+                                <option value="Team / Timu">Team / Timu</option>
+                            </select>
+                            <p id="Dropdown1_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- Team Name (hidden by default) -->
+                    <div class="zf-tempFrmWrapper zf-large" id="teamNameWrapper" style="display:none;">
+                        <label class="zf-labelName">Team's Name / Jina la Timu</label>
+                        <div class="zf-tempContDiv">
+                            <span>
+                                <input type="text" name="SingleLine" checktype="c1" value="" maxlength="255" fieldType="1" placeholder="" />
+                            </span>
+                            <p id="SingleLine_error" class="zf-errorMessage" style="display: none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- Years of experience -->
+                    <div class="zf-tempFrmWrapper zf-large">
+                        <label class="zf-labelName">Select your years of experience / Uzoefu kwa muda gani <em class="zf-important"> *</em></label>
+                        <div class="zf-tempContDiv">
+                            <select class="zf-form-sBox" name="Dropdown2" checktype="c1">
+                                <option selected="true" value="-Select-">-Select-</option>
+                                <option value="Less than 1 Year / Chini ya Mwaka 1">Less than 1 Year / Chini ya Mwaka 1</option>
+                                <option value="1–3 Years / 1 -3 Miaka">1–3 Years / 1 -3 Miaka</option>
+                                <option value="4–6 Years / 4 -6 Miaka">4–6 Years / 4 -6 Miaka</option>
+                                <option value="7–10 Years / 7 - 10 Miaka">7–10 Years / 7 - 10 Miaka</option>
+                                <option value="More than 10 Years / Zaidi ya Miaka 10">More than 10 Years / Zaidi ya Miaka 10</option>
+                            </select>
+                            <p id="Dropdown2_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- Type of draughts -->
+                    <div class="zf-tempFrmWrapper zf-large">
+                        <label class="zf-labelName">Select your type of draughts / Aina ya Draughts <em class="zf-important"> *</em></label>
+                        <div class="zf-tempContDiv">
+                            <select class="zf-form-sBox" name="Dropdown3" checktype="c1">
+                                <option selected="true" value="-Select-">-Select-</option>
+                                <option value="International Draughts /  Kawaida ( 8 x 8 )">International Draughts / Kawaida ( 8 x 8 )</option>
+                                <option value="french Draughts / Frenchi (10 x 10)">french Draughts / Frenchi (10 x 10)</option>
+                                <option value="Both / Yote">Both / Yote</option>
+                            </select>
+                            <p id="Dropdown3_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- Player level -->
+                    <div class="zf-tempFrmWrapper zf-large">
+                        <label class="zf-labelName">Select your player level / Kiwango cha uchezaji <em class="zf-important"> *</em></label>
+                        <div class="zf-tempContDiv">
+                            <select class="zf-form-sBox" name="Dropdown4" checktype="c1">
+                                <option selected="true" value="-Select-">-Select-</option>
+                                <option value="Beginner / Mwanzo">Beginner / Mwanzo</option>
+                                <option value="Intermediate / Uwezo Wa Kati">Intermediate / Uwezo Wa Kati</option>
+                                <option value="Advanced / Uwezo wa Juu">Advanced / Uwezo wa Juu</option>
+                                <option value="Professional / Mtaalamu">Professional / Mtaalamu</option>
+                            </select>
+                            <p id="Dropdown4_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- Education level -->
+                    <div class="zf-tempFrmWrapper zf-large">
+                        <label class="zf-labelName">Select your education level / Elimu Yako <em class="zf-important"> *</em></label>
+                        <div class="zf-tempContDiv">
+                            <select class="zf-form-sBox" name="Dropdown5" checktype="c1">
+                                <option selected="true" value="-Select-">-Select-</option>
+                                <option value="Primary Education">Primary Education</option>
+                                <option value="Secondary Education">Secondary Education</option>
+                                <option value="Certificate">Certificate</option>
+                            </select>
+                            <p id="Dropdown5_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- Employment Status (trigger for Job title) -->
+                    <div class="zf-tempFrmWrapper zf-large">
+                        <label class="zf-labelName">Select your employment status / Hali ya Ajira <em class="zf-important"> *</em></label>
+                        <div class="zf-tempContDiv">
+                            <select class="zf-form-sBox" name="Dropdown6" id="employmentStatus" checktype="c1">
+                                <option selected="true" value="-Select-">-Select-</option>
+                                <option value="Employed / Nimeajiriwa">Employed / Nimeajiriwa</option>
+                                <option value="Self-Employed / Nimejiajiri">Self-Employed / Nimejiajiri</option>
+                                <option value="Unemployed / Sina Ajira">Unemployed / Sina Ajira</option>
+                                <option value="Student / Mwanafunzi">Student / Mwanafunzi</option>
+                            </select>
+                            <p id="Dropdown6_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- School / College -->
+                    <div class="zf-tempFrmWrapper zf-large">
+                        <label class="zf-labelName">School, College / Shule, Chuo <em class="zf-important"> *</em></label>
+                        <div class="zf-tempContDiv">
+                            <span>
+                                <input type="text" name="SingleLine1" checktype="c1" value="" maxlength="255" fieldType="1" placeholder="" />
+                            </span>
+                            <p id="SingleLine1_error" class="zf-errorMessage" style="display: none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- Job title (hidden by default) -->
+                    <div class="zf-tempFrmWrapper zf-large" id="jobTitleWrapper" style="display:none;">
+                        <label class="zf-labelName">Job title or occupation / Kazi unayofanya (Employed / Muajiriwa) <em class="zf-important"> *</em></label>
+                        <div class="zf-tempContDiv">
+                            <span>
+                                <input type="text" name="SingleLine5" checktype="c1" value="" maxlength="255" fieldType="1" placeholder="" />
+                            </span>
+                            <p id="SingleLine5_error" class="zf-errorMessage" style="display: none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- Disability (trigger for details) -->
+                    <div class="zf-radio zf-tempFrmWrapper zf-oneColumns">
+                        <label class="zf-labelName">Do you have any disability or special needs? / Je, una ulemavu? <em class="zf-important">*</em></label>
+                        <div class="zf-tempContDiv">
+                            <div class="zf-overflow">
+                                <span class="zf-multiAttType">
+                                    <input class="zf-radioBtnType" type="radio" id="Radio_1" name="Radio" checktype="c1" value="Yes / Ndiyo" onclick="toggleDisabilityDetails(true)">
+                                    <label for="Radio_1" class="zf-radioChoice">Yes / Ndiyo</label>
+                                </span>
+                                <span class="zf-multiAttType">
+                                    <input class="zf-radioBtnType" type="radio" id="Radio_2" name="Radio" checktype="c1" value="No / Hapana" onclick="toggleDisabilityDetails(false)">
+                                    <label for="Radio_2" class="zf-radioChoice">No / Hapana</label>
+                                </span>
+                                <div class="zf-clearBoth"></div>
+                            </div>
+                            <p id="Radio_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- Disability Details (hidden by default) -->
+                    <div class="zf-tempFrmWrapper zf-large" id="disabilityDetailsWrapper" style="display:none;">
+                        <label class="zf-labelName">Provide details about your disability or special needs ( Toa maelezo ya aina ya ulemavu wako ) <em class="zf-important"> *</em></label>
+                        <div class="zf-tempContDiv">
+                            <span>
+                                <textarea name="MultiLine" checktype="c1" maxlength="65535" placeholder=""></textarea>
+                            </span>
+                            <p id="MultiLine_error" class="zf-errorMessage" style="display: none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- Emergency Contact Name -->
+                    <div class="zf-tempFrmWrapper zf-large">
+                        <label class="zf-labelName">Enter emergency contact name / Jina la mtu wa dharula <em class="zf-important"> *</em></label>
+                        <div class="zf-tempContDiv">
+                            <span>
+                                <input type="text" name="SingleLine6" checktype="c1" value="" maxlength="255" fieldType="1" placeholder="" />
+                            </span>
+                            <p id="SingleLine6_error" class="zf-errorMessage" style="display: none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- Relationship -->
+                    <div class="zf-tempFrmWrapper zf-large">
+                        <label class="zf-labelName">Select your relationship to the emergency contact / Uhusiano wenu <em class="zf-important"> *</em></label>
+                        <div class="zf-tempContDiv">
+                            <select class="zf-form-sBox" name="Dropdown7" checktype="c1">
+                                <option selected="true" value="-Select-">-Select-</option>
+                                <option value="Parent / Mzazi">Parent / Mzazi</option>
+                                <option value="Guardian / Mlezi">Guardian / Mlezi</option>
+                                <option value="Relative / Ndugu">Relative / Ndugu</option>
+                                <option value="Friend / Rafiki">Friend / Rafiki</option>
+                                <option value="Spouse / Mwenza">Spouse / Mwenza</option>
+                                <option value="Sponsor / Mdhamini">Sponsor / Mdhamini</option>
+                            </select>
+                            <p id="Dropdown7_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- Emergency Phone -->
+                    <div class="zf-tempFrmWrapper zf-large">
+                        <label class="zf-labelName">Enter emergency contact phone number / Namba ya Simu ya mdharula <em class="zf-important"> *</em></label>
+                        <div class="zf-tempContDiv zf-phonefld">
+                            <div class="zf-phwrapper zf-phNumber">
+                                <span>
+                                    <input type="text" compname="PhoneNumber1" name="PhoneNumber1_countrycode" maxlength="20" checktype="c7" value="" phoneFormat="1" isCountryCodeEnabled="false" fieldType="11" id="international_PhoneNumber1_countrycode" valType="number" phoneFormatType="1" placeholder="" />
+                                    <label>Number</label>
+                                </span>
+                                <div class="zf-clearBoth"></div>
+                            </div>
+                            <p id="PhoneNumber1_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- Upload Emergency ID -->
+                    <div class="zf-tempFrmWrapper">
+                        <label class="zf-labelName">Upload image or ID / Weka picha au Kitambulisho cha Mdharula <em class="zf-important">*</em></label>
+                        <div class="zf-tempContDiv">
+                            <input type="file" accept="image/*" name="ImageUpload1" checktype="c1" />
+                            <p id="ImageUpload1_error" class="zf-errorMessage" style="display: none;">Choose any file for this field.</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                    </div>
+
+                    <!-- Signature -->
+                    <div class="zf-sign zf-tempFrmWrapper zf-large">
+                        <label class="zf-labelName">Sign to confirm the information provided is accurate <em class="zf-important">*</em></label>
+                        <div class="zf-tempContDiv">
+                            <div class="zf-signContainer" id="signContainer-Signature">
+                                <object name="Signature_obj" checktype="c8" compname="Signature">
+                                    <canvas id="drawingCanvas-Signature" tabindex="-1"></canvas>
+                                    <input type="hidden" id="hiddenSignInput-Signature" name="Signature" value="">
+                                    <div class="zf-signArea" id="sign-area-Signature" style="display:none"></div>
+                                    <a id="clearSign" href="javascript:void(0);" onClick="zf_ClearSignature('drawingCanvas-Signature');">Clear</a>
+                                </object>
+                            </div>
+                            <p id="Signature_error" class="zf-errorMessage" style="display:none;">Invalid value</p>
+                        </div>
+                        <div class="zf-clearBoth"></div>
+                        <script>
+                            (function() {
+                                var canvasElem = document.getElementById("drawingCanvas-Signature");
+                                if (canvasElem) {
+                                    zf_SetCanvasElemWidth("Signature");
+                                    zf_AddEventListenersToCanvas(canvasElem);
+                                }
+                            })();
+                        </script>
+                    </div>
+
+                </ul>
+            </div>
+
+            <!-- Submit -->
+            <ul>
+                <li class="zf-fmFooter">
+                    <button class="zf-submitColor">Submit</button>
+                </li>
+            </ul>
+
+        </div>
+        <!-- end zf-templateWrapper -->
+
+    </form>
+</div>
+
+<script>
+    // ========================================================================
+    // 1. VALIDATION & SIGNATURE FUNCTIONS (zilizotolewa awali)
+    // ========================================================================
+    var zf_DateRegex = /^(([0][1-9])|([1-2][0-9])|([3][0-1]))[-](Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)[-](?:(?:19|20)[0-9]{2})$/;
+    var zf_MonthYearRegex = /^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|JAN|FEB|MAR|APR|MAY|JUN|JUL|AUG|SEP|OCT|NOV|DEC)[-](?:(?:19|20)[0-9]{2})$/;
+    var zf_MandArray = ["ImageUpload2", "Name_Salutation", "Name_Last", "Dropdown9", "Dropdown10", "Dropdown11", "Dropdown12", "Dropdown13", "Dropdown14", "Dropdown15", "Dropdown", "SingleLine2", "ImageUpload", "PhoneNumber_countrycode", "Dropdown1", "Dropdown2", "Dropdown3", "Dropdown4", "Dropdown5", "Dropdown6", "SingleLine1", "SingleLine5", "Radio", "MultiLine", "SingleLine6", "Dropdown7", "PhoneNumber1_countrycode", "ImageUpload1", "Signature_obj"];
+    var zf_FieldArray = ["ImageUpload2", "Name_Salutation", "Name_Last", "Name_First", "Name_Middle", "Dropdown8", "Dropdown9", "Address_City", "Address_AddressLine1", "Dropdown10", "Dropdown11", "Dropdown12", "Dropdown13", "Dropdown14", "Dropdown15", "SingleLine3", "Dropdown", "SingleLine2", "ImageUpload", "PhoneNumber_countrycode", "Email", "Dropdown1", "SingleLine", "Dropdown2", "Dropdown3", "Dropdown4", "Dropdown5", "Dropdown6", "SingleLine1", "SingleLine5", "Radio", "MultiLine", "SingleLine6", "Dropdown7", "PhoneNumber1_countrycode", "ImageUpload1", "Signature_obj"];
+    var isSalesIQIntegrationEnabled = false;
+    var salesIQFieldsArray = [];
+
+    function zf_ValidateAndSubmit() {
+        if (zf_CheckMandatory()) {
+            if (zf_ValidCheck()) {
+                if (isSalesIQIntegrationEnabled) { zf_addDataToSalesIQ(); }
+                return true;
+            } else { return false; }
+        } else { return false; }
+    }
+
+    function zf_CheckMandatory() {
+        for (i = 0; i < zf_MandArray.length; i++) {
+            var fieldObj = document.forms.form[zf_MandArray[i]];
+            if (fieldObj) {
+                if (fieldObj.nodeName != null) {
+                    if (fieldObj.nodeName == 'OBJECT') {
+                        if (!zf_MandatoryCheckSignature(fieldObj)) {
+                            zf_ShowErrorMsg(zf_MandArray[i]);
+                            return false;
+                        }
+                    } else if (((fieldObj.value).replace(/^\s+|\s+$/g, '')).length == 0) {
+                        if (fieldObj.type == 'file') {
+                            fieldObj.focus();
+                            zf_ShowErrorMsg(zf_MandArray[i]);
+                            return false;
+                        }
+                        fieldObj.focus();
+                        zf_ShowErrorMsg(zf_MandArray[i]);
+                        return false;
+                    } else if (fieldObj.nodeName == 'SELECT') {
+                        if (fieldObj.options[fieldObj.selectedIndex].value == '-Select-') {
+                            fieldObj.focus();
+                            zf_ShowErrorMsg(zf_MandArray[i]);
+                            return false;
+                        }
+                    } else if (fieldObj.type == 'checkbox' || fieldObj.type == 'radio') {
+                        if (fieldObj.checked == false) {
+                            fieldObj.focus();
+                            zf_ShowErrorMsg(zf_MandArray[i]);
+                            return false;
+                        }
+                    }
+                } else {
+                    var checkedValsCount = 0;
+                    var inpChoiceElems = fieldObj;
+                    for (var ii = 0; ii < inpChoiceElems.length; ii++) {
+                        if (inpChoiceElems[ii].checked === true) { checkedValsCount++; }
+                    }
+                    if (checkedValsCount == 0) {
+                        inpChoiceElems[0].focus();
+                        zf_ShowErrorMsg(zf_MandArray[i]);
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
+    }
+
+    function zf_ValidCheck() {
+        var isValid = true;
+        for (ind = 0; ind < zf_FieldArray.length; ind++) {
+            var fieldObj = document.forms.form[zf_FieldArray[ind]];
+            if (fieldObj) {
+                if (fieldObj.nodeName != null) {
+                    var checkType = fieldObj.getAttribute("checktype");
+                    if (checkType == "c2") {
+                        if (!zf_ValidateNumber(fieldObj)) {
+                            isValid = false;
+                            fieldObj.focus();
+                            zf_ShowErrorMsg(zf_FieldArray[ind]);
+                            return false;
+                        }
+                    } else if (checkType == "c3") {
+                        if (!zf_ValidateCurrency(fieldObj) || !zf_ValidateDecimalLength(fieldObj, 10)) {
+                            isValid = false;
+                            fieldObj.focus();
+                            zf_ShowErrorMsg(zf_FieldArray[ind]);
+                            return false;
+                        }
+                    } else if (checkType == "c4") {
+                        if (!zf_ValidateDateFormat(fieldObj)) {
+                            isValid = false;
+                            fieldObj.focus();
+                            zf_ShowErrorMsg(zf_FieldArray[ind]);
+                            return false;
+                        }
+                    } else if (checkType == "c5") {
+                        if (!zf_ValidateEmailID(fieldObj)) {
+                            isValid = false;
+                            fieldObj.focus();
+                            zf_ShowErrorMsg(zf_FieldArray[ind]);
+                            return false;
+                        }
+                    } else if (checkType == "c6") {
+                        if (!zf_ValidateLiveUrl(fieldObj)) {
+                            isValid = false;
+                            fieldObj.focus();
+                            zf_ShowErrorMsg(zf_FieldArray[ind]);
+                            return false;
+                        }
+                    } else if (checkType == "c7") {
+                        if (!zf_ValidatePhone(fieldObj)) {
+                            isValid = false;
+                            fieldObj.focus();
+                            zf_ShowErrorMsg(zf_FieldArray[ind]);
+                            return false;
+                        }
+                    } else if (checkType == "c8") {
+                        zf_ValidateSignature(fieldObj);
+                    } else if (checkType == "c9") {
+                        if (!zf_ValidateMonthYearFormat(fieldObj)) {
+                            isValid = false;
+                            fieldObj.focus();
+                            zf_ShowErrorMsg(zf_FieldArray[ind]);
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+        return isValid;
+    }
+
+    function zf_ShowErrorMsg(uniqName) {
+        var fldLinkName;
+        for (errInd = 0; errInd < zf_FieldArray.length; errInd++) {
+            fldLinkName = zf_FieldArray[errInd].split('_')[0];
+            var errEl = document.getElementById(fldLinkName + "_error");
+            if (errEl) errEl.style.display = 'none';
+        }
+        var linkName = uniqName.split('_')[0];
+        var errEl2 = document.getElementById(linkName + "_error");
+        if (errEl2) errEl2.style.display = 'block';
+    }
+
+    function zf_ValidateNumber(elem) {
+        var validChars = "-0123456789";
+        var numValue = elem.value.replace(/^\s+|\s+$/g, '');
+        if (numValue != null && !numValue == "") {
+            var strChar;
+            var result = true;
+            if (numValue.charAt(0) == "-" && numValue.length == 1) { return false; }
+            for (i = 0; i < numValue.length && result == true; i++) {
+                strChar = numValue.charAt(i);
+                if ((strChar == "-") && (i != 0)) { return false; }
+                if (validChars.indexOf(strChar) == -1) { result = false; }
+            }
+            return result;
+        } else { return true; }
+    }
+
+    function zf_ValidateDateFormat(inpElem) {
+        var dateValue = inpElem.value.replace(/^\s+|\s+$/g, '');
+        if (dateValue == "") { return true; } else { return (zf_DateRegex.test(dateValue)); }
+    }
+
+    function zf_ValidateCurrency(elem) {
+        var validChars = "0123456789.";
+        var numValue = elem.value.replace(/^\s+|\s+$/g, '');
+        if (numValue.charAt(0) == '-') { numValue = numValue.substring(1, numValue.length); }
+        if (numValue != null && !numValue == "") {
+            var strChar;
+            var result = true;
+            for (i = 0; i < numValue.length && result == true; i++) {
+                strChar = numValue.charAt(i);
+                if (validChars.indexOf(strChar) == -1) { result = false; }
+            }
+            return result;
+        } else { return true; }
+    }
+
+    function zf_ValidateDecimalLength(elem, decimalLen) {
+        var numValue = elem.value;
+        if (numValue.indexOf('.') >= 0) {
+            var decimalLength = numValue.substring(numValue.indexOf('.') + 1).length;
+            if (decimalLength > decimalLen) { return false; } else { return true; }
+        }
+        return true;
+    }
+
+    function zf_ValidateEmailID(elem) {
+        var check = 0;
+        var emailValue = elem.value;
+        if (emailValue != null && !emailValue == "") {
+            var emailArray = emailValue.split(",");
+            for (i = 0; i < emailArray.length; i++) {
+                var emailExp = /^[\w]([\w\-.+&'/]*)@([a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,22}$/;
+                if (!emailExp.test(emailArray[i].replace(/^\s+|\s+$/g, ''))) { check = 1; }
+            }
+            if (check == 0) { return true; } else { return false; }
+        } else { return true; }
+    }
+
+    function zf_ValidateLiveUrl(elem) {
+        var urlValue = elem.value;
+        if (urlValue !== null && typeof(urlValue) !== "undefined") {
+            urlValue = urlValue.replace(/^\s+|\s+$/g, '');
+            if (urlValue !== "") {
+                var urlregex = new RegExp("^(((https|http|ftps|ftp)://[a-zA-Z\\d]+((_|-|@)[a-zA-Z\\d]+)*(\\.[a-zA-Z\\d]+((_|-|@)[a-zA-Z\\d]+)*)+(:\\d{1,5})?)|((w|W){3}(\\.[a-zA-Z\\d]+((_|-|@)[a-zA-Z\\d]+)*){2,}(:\\d{1,5})?)|([a-zA-Z\\d]+((_|-)[a-zA-Z\\d]+)*(\\.[a-zA-Z\\d]+((_|-)[a-zA-Z\\d]+)*)+(:\\d{1,5})?))(/[-\\w.?,:'/\\\\+=&;%$#@()!~]*)?$", "i");
+                return (urlregex.test(urlValue));
+            }
+        }
+        return true;
+    }
+
+    function zf_ValidatePhone(inpElem) {
+        var ZFPhoneRegex = {
+            PHONE_INTE_ALL_REG: /^[+]{0,1}[()0-9-. ]+$/,
+            PHONE_INTE_NUMERIC_REG: /^[0-9]+$/,
+            PHONE_INTE_CONT_CODE_ENABLED_REG: /^[(0-9-.][()0-9-. ]*$/,
+            PHONE_USA_REG: /^[0-9]+$/,
+            PHONE_CONT_CODE_REG: /^[+][0-9]{1,4}$/
+        }
+        var phoneFormat = parseInt(inpElem.getAttribute("phoneFormat"));
+        var fieldInpVal = inpElem.value.replace(/^\s+|\s+$/g, '');
+        var toReturn = true;
+        if (phoneFormat === 1) {
+            if (inpElem.getAttribute("valType") == 'code') {
+                var codeRexp = ZFPhoneRegex.PHONE_CONT_CODE_REG;
+                if (fieldInpVal != "" && !codeRexp.test(fieldInpVal)) { return false; }
+            } else {
+                var IRexp = ZFPhoneRegex.PHONE_INTE_ALL_REG;
+                if (inpElem.getAttribute("phoneFormatType") == '2') { IRexp = ZFPhoneRegex.PHONE_INTE_NUMERIC_REG; }
+                if (fieldInpVal != "" && !IRexp.test(fieldInpVal)) {
+                    toReturn = false;
+                    return toReturn;
+                }
+            }
+            return toReturn;
+        } else if (phoneFormat === 2) {
+            var InpMaxlength = inpElem.getAttribute("maxlength");
+            var USARexp = ZFPhoneRegex.PHONE_USA_REG;
+            if (fieldInpVal != "" && USARexp.test(fieldInpVal) && fieldInpVal.length == InpMaxlength) {
+                toReturn = true;
+            } else if (fieldInpVal == "") {
+                toReturn = true;
+            } else {
+                toReturn = false;
+            }
+            return toReturn;
+        }
+    }
+
+    function zf_ValidateSignature(objElem) {
+        var linkName = objElem.getAttribute("compname");
+        var canvasElem = document.getElementById("drawingCanvas-" + linkName);
+        var isValidSign = zf_IsSignaturePresent(objElem, linkName, canvasElem);
+        var hiddenSignInputElem = document.getElementById("hiddenSignInput-" + linkName);
+        if (isValidSign) { hiddenSignInputElem.value = canvasElem.toDataURL(); } else { hiddenSignInputElem.value = ""; }
+        return isValidSign;
+    }
+
+    function zf_MandatoryCheckSignature(objElem) {
+        var linkName = objElem.getAttribute("compname");
+        var canvasElem = document.getElementById("drawingCanvas-" + linkName);
+        var isValid = zf_IsSignaturePresent(objElem, linkName, canvasElem);
+        return isValid;
+    }
+
+    function zf_IsSignaturePresent(objElem, linkName, canvasElem) {
+        var context = canvasElem.getContext('2d');
+        var canvasWidth = canvasElem.width;
+        var canvasHeight = canvasElem.height;
+        var canvasData = context.getImageData(0, 0, canvasWidth, canvasHeight);
+        var signLen = canvasData.data.length;
+        var flag = false;
+        for (var index = 0; index < signLen; index++) {
+            if (!canvasData.data[index]) { flag = false; } else if (canvasData.data[index]) { flag = true; break; }
+        }
+        return flag;
+    }
+
+    function zf_FocusNext(elem, event) {
+        if (event.keyCode == 9 || event.keyCode == 16) { return; }
+        if (event.keyCode >= 37 && event.keyCode <= 40) { return; }
+        var compname = elem.getAttribute("compname");
+        var inpElemName = elem.getAttribute("name");
+        if (inpElemName == compname + "_countrycode") {
+            if (elem.value.length == 3) { document.getElementsByName(compname + "_first")[0].focus(); }
+        } else if (inpElemName == compname + "_first") {
+            if (elem.value.length == 3) { document.getElementsByName(compname + "_second")[0].focus(); }
+        }
+    }
+
+    function zf_ValidateMonthYearFormat(inpElem) {
+        var monthYearValue = inpElem.value.replace(/^\s+|\s+$/g, '');
+        if (monthYearValue == "") { return true; } else { return (zf_MonthYearRegex.test(monthYearValue)); }
+    }
+
+    // ========================================================================
+    // 2. SIGNATURE CANVAS FUNCTIONS
+    // ========================================================================
+    function zf_SetCanvasElemWidth(linkName) {
+        var canvasElem = document.getElementById("drawingCanvas-" + linkName);
+        if (canvasElem !== null && canvasElem.nodeName == 'CANVAS') {
+            var imgElem = document.getElementById("img-" + linkName);
+            var signContainerSignature = document.getElementById("signContainer-" + linkName);
+            canvasElem.width = signContainerSignature.offsetWidth;
+            if (imgElem) { imgElem.setAttribute("class", "signImg"); }
+        }
+    }
+
+    function zf_AddEventListenersToCanvas(canvasElem) {
+        canvasElem.addEventListener("mousedown", function(event) {
+            var context = canvasElem.getContext("2d");
+            var position = zf_GetXYCoords(event, canvasElem, false);
+            context.moveTo(position.X, position.Y);
+            context.beginPath();
+            var startScribble = function(event) { zf_StartScribbling(event, canvasElem, context, false); }
+            var endScribble = function(event) { zf_EndScribbling(event, canvasElem, context, startScribble, endScribble); }
+            this.addEventListener("mousemove", startScribble, false);
+            this.addEventListener("mouseup", endScribble, false);
+            this.addEventListener("mouseout", endScribble, false);
+            this.addEventListener('touchstart', function(event) {
+                position = zf_GetXYCoords(event, canvasElem, true);
+                context.moveTo(position.X, position.Y);
+                context.beginPath();
+                event.preventDefault();
+            }, false);
+            this.addEventListener('touchmove', function(event) {
+                zf_StartScribbling(event, canvasElem, context, true);
+                event.preventDefault();
+            }, false);
+        });
+        var userAgent = window.navigator.userAgent;
+        var msie = userAgent.indexOf("MSIE ");
+        if (msie > 0) {
+            this.addEventListener("keypress", function(event) {
+                if (event.keyCode === 13) { event.preventDefault(); }
+            });
+        }
+    }
+
+    function zf_ClearSignature(signElemID) {
+        var signatureElem = document.getElementById(signElemID);
+        var signContext = signatureElem.getContext("2d");
+        signContext.clearRect(0, 0, signatureElem.width, signatureElem.height);
+    }
+
+    function zf_GetXYCoords(event, signatureElem, isTouchEvent) {
+        var xCoordinate, yCoordinate;
+        var signElemLeftPos = zf_GetOffsetLeft(signatureElem);
+        var signElemTopPos = zf_GetOffsetTop(signatureElem);
+        var xPosition, yPosition;
+        if (!isTouchEvent) {
+            xPosition = event.clientX;
+            yPosition = event.clientY;
+        } else {
+            xPosition = event.changedTouches[0].clientX;
+            yPosition = event.changedTouches[0].clientY;
+        }
+        if (!isTouchEvent && (event.pageX || event.pageY)) {
+            xCoordinate = event.pageX;
+            yCoordinate = event.pageY;
+        } else if (isTouchEvent && (event.changedTouches[0].pageX || event.changedTouches[0].pageY)) {
+            xCoordinate = event.changedTouches[0].pageX;
+            yCoordinate = event.changedTouches[0].pageY;
+        } else {
+            xCoordinate = xPosition + document.body.scrollLeft + document.documentElement.scrollLeft;
+            yCoordinate = yPosition + document.body.scrollTop + document.documentElement.scrollTop;
+        }
+        var xVal = xCoordinate - signElemLeftPos;
+        var yVal = yCoordinate - signElemTopPos;
+        return { X: xVal, Y: yVal };
+    }
+
+    function zf_GetOffsetLeft(signElem) {
+        var rect = signElem.getBoundingClientRect();
+        var offSetLeft = document.body.scrollLeft;
+        if (offSetLeft == 0) { offSetLeft = offSetLeft + rect.left + document.documentElement.scrollLeft; } else { offSetLeft = offSetLeft + rect.left; }
+        return offSetLeft;
+    }
+
+    function zf_GetOffsetTop(signElem) {
+        var rect = signElem.getBoundingClientRect();
+        var offSetTop = document.body.scrollTop;
+        if (offSetTop == 0) { offSetTop = offSetTop + rect.top + document.documentElement.scrollTop; } else { offSetTop = offSetTop + rect.top; }
+        return offSetTop;
+    }
+
+    function zf_StartScribbling(event, canvasElem, context, isTouchEvent) {
+        var position = zf_GetXYCoords(event, canvasElem, isTouchEvent);
+        context.lineTo(position.X, position.Y);
+        context.stroke();
+        context.strokeStyle = "#000000";
+    }
+
+    function zf_EndScribbling(event, canvasElem, context, startScribleEventListn, endScribleEventListn) {
+        context.closePath();
+        canvasElem.removeEventListener("mousemove", startScribleEventListn);
+        canvasElem.removeEventListener("mouseup", endScribleEventListn);
+        canvasElem.removeEventListener("mouseout", endScribleEventListn);
+    }
+
+    // ========================================================================
+    // 3. UNHIDE / HIDE RULES (RULES ZA KUCHAGUA NA KUFICHA/KUFUNUA)
+    // ========================================================================
+
+    // 3.1. Region fields based on Nationality
+    function updateRegionFields() {
+        var nationality = document.getElementById('nationalitySelect').value;
+        var regionFields = document.querySelectorAll('.region-field');
+
+        regionFields.forEach(function(el) {
+            if (el.getAttribute('data-country') === nationality) {
+                el.style.display = 'block';
+                // Make sure the select inside is required for validation
+                var select = el.querySelector('select');
+                if (select) {
+                    select.setAttribute('checktype', 'c1');
+                }
+            } else {
+                el.style.display = 'none';
+                var select = el.querySelector('select');
+                if (select) {
+                    select.removeAttribute('checktype');
+                    // Reset to -Select- to avoid validation issues
+                    select.selectedIndex = 0;
+                }
+            }
+        });
+    }
+
+    document.getElementById('nationalitySelect').addEventListener('change', updateRegionFields);
+    // Run on load to set initial state
+    window.addEventListener('load', function() {
+        updateRegionFields();
+        // Also set initial states for other rules
+        updateTeamNameField();
+        updateJobTitleField();
+        // Disability details default hidden (no radio selected)
+    });
+
+    // 3.2. Team Name based on Participation Type
+    function updateTeamNameField() {
+        var participation = document.getElementById('participationType').value;
+        var wrapper = document.getElementById('teamNameWrapper');
+        var input = wrapper.querySelector('input');
+        if (participation === 'Team / Timu') {
+            wrapper.style.display = 'block';
+            input.setAttribute('checktype', 'c1');
+        } else {
+            wrapper.style.display = 'none';
+            input.removeAttribute('checktype');
+            input.value = '';
+        }
+    }
+
+    document.getElementById('participationType').addEventListener('change', updateTeamNameField);
+
+    // 3.3. Job Title based on Employment Status
+    function updateJobTitleField() {
+        var status = document.getElementById('employmentStatus').value;
+        var wrapper = document.getElementById('jobTitleWrapper');
+        var input = wrapper.querySelector('input');
+        if (status === 'Employed / Nimeajiriwa') {
+            wrapper.style.display = 'block';
+            input.setAttribute('checktype', 'c1');
+        } else {
+            wrapper.style.display = 'none';
+            input.removeAttribute('checktype');
+            input.value = '';
+        }
+    }
+
+    document.getElementById('employmentStatus').addEventListener('change', updateJobTitleField);
+
+    // 3.4. Disability Details based on Radio selection
+    function toggleDisabilityDetails(show) {
+        var wrapper = document.getElementById('disabilityDetailsWrapper');
+        var textarea = wrapper.querySelector('textarea');
+        if (show) {
+            wrapper.style.display = 'block';
+            textarea.setAttribute('checktype', 'c1');
+        } else {
+            wrapper.style.display = 'none';
+            textarea.removeAttribute('checktype');
+            textarea.value = '';
+        }
+    }
+
+    // Ensure radio buttons trigger correctly
+    document.querySelectorAll('input[name="Radio"]').forEach(function(radio) {
+        radio.addEventListener('change', function() {
+            if (this.value === 'Yes / Ndiyo') {
+                toggleDisabilityDetails(true);
+            } else {
+                toggleDisabilityDetails(false);
+            }
+        });
+    });
+
+    // Re-run canvas setup on resize (optional)
+    window.addEventListener('resize', function() {
+        var canvasElem = document.getElementById("drawingCanvas-Signature");
+        if (canvasElem) {
+            zf_SetCanvasElemWidth("Signature");
+        }
+    });
+</script>
+
+</body>
+</html>
